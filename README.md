@@ -9,12 +9,6 @@ Do you enjoy listening to YouTube's podcasts, audiobooks, interviews or anything
  - Intuitive and simple UI
  - And more
 
-# Installation
-```bash
-brew cask install menutube
-```
-or download from release page https://github.com/edanchenkov/MenuTube/releases
-
 ### Build macOS application (darwin)
 
 ```bash
