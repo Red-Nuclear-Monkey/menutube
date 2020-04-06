@@ -97,6 +97,9 @@ var defaultMenuItems = [
     //     },
     //     role : 'help'
     // },
+
+    //TODO: Replace edanchekov with Red-Nuclear-Monkey
+
     {
         label : dynamicLabel,
         click : function () {
@@ -167,6 +170,8 @@ var checkForUpdate = function (menu, controls) {
     if (typeof fetch !== 'function') {
         return;
     }
+
+    //TODO: Replace edanchekov with Red-Nuclear-Monkey
 
     if (attempts > 0) {
         attempts--;

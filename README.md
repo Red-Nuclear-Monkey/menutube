@@ -30,7 +30,7 @@ open ./builds/MenuTube-darwin-x64/MenuTube.app
 npm run dev
 ```
 
-# https://edanchenkov.github.io/MenuTube/
+# https://red-nuclear-monkey.github.io/menutube/
 
 ### docs/ folder
  
