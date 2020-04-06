@@ -18,7 +18,6 @@ or download from release page https://github.com/edanchenkov/MenuTube/releases
 ### Build macOS application (darwin)
 
 ```bash
-[sudo] npm install -g electron
 npm i
 npm run build
 ```
