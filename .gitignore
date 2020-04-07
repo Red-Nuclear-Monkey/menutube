@@ -5,6 +5,7 @@ vendor
 *.lock
 .bundle
 docs/_site
+.DS_STORE
 
 .idea
 builds/

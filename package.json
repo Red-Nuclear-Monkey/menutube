@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/edanchenkov/MenuTube.git"
+    "url": "git+https://github.com/Red-Nuclear-Monkey/menutube.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/edanchenkov/MenuTube/issues"
+    "url": "https://github.com/Red-Nuclear-Monkey/menutube/issues"
   },
-  "homepage": "https://github.com/edanchenkov/MenuTube#readme",
+  "homepage": "https://github.com/Red-Nuclear-Monkey/menutube#readme",
   "dependencies": {
     "@exponent/electron-cookies": "^2.0.0",
     "bulma": "^0.3.2",

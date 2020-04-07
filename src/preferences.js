@@ -66,7 +66,7 @@
     var githubLinkEl = document.getElementById('github-link');
 
     githubLinkEl.addEventListener('click', function () {
-        shell.openExternal('https://github.com/edanchenkov/menutube');
+        shell.openExternal('https://github.com/Red-Nuclear-Monkey/menutube');
     });
 
     var appVersion = document.getElementById('app-version');
