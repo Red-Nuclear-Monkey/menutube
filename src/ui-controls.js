@@ -50,8 +50,6 @@ var clickHandler = function (name, menu) {
     }
 };
 
-var dynamicLabel = 'Check for Updates';
-
 var defaultMenuItems = [
     {
         label : 'Open in browser',
@@ -97,17 +95,6 @@ var defaultMenuItems = [
     //     },
     //     role : 'help'
     // },
-
-    //TODO: Replace edanchekov with Red-Nuclear-Monkey
-
-    {
-        label : dynamicLabel,
-        click : function () {
-            hideAndPause();
-            shell.openExternal('https://edanchenkov.github.io/MenuTube/');
-        },
-        role : 'help'
-    },
     {
         type : 'separator'
     },
@@ -158,61 +145,9 @@ var buildMenu = function (menu, menuItems) {
 };
 
 
-/*
- *   This should not be here, but lets make it simple for now
- *   TODO: Time outs and retries should be handled where this function is called, not within the function
- * */
-var attempts = 5;
-var checkForUpdate = function (menu, controls) {
-
-    var fetch = window.fetch;
-
-    if (typeof fetch !== 'function') {
-        return;
-    }
-
-    //TODO: Replace edanchekov with Red-Nuclear-Monkey
-
-    if (attempts > 0) {
-        attempts--;
-        setTimeout(function () {
-            fetch('https://api.github.com/repos/edanchenkov/MenuTube/releases/latest').then(function (res) {
-                if (typeof res !== 'undefined' && typeof res.json === 'function') {
-                    res.json().then(function (data) {
-                        if (typeof data !== 'undefined' && data.hasOwnProperty('tag_name')) {
-
-                            if (data.tag_name !== remote.app.getVersion()) {
-                                var menuItems = defaultMenuItems.map(function (mi) {
-                                    /*
-                                     *   Should check against something else probably, not label
-                                     * */
-                                    if (mi.label === dynamicLabel) {
-                                        mi.label = '(!) New version is available';
-                                    }
-                                    return mi;
-                                });
-
-                                var prefIcon = controls.preferenceButton.querySelector('i.fa');
-
-                                prefIcon.classList.remove('fa-bars');
-                                prefIcon.classList.add('fa-exclamation-circle', 'update-available');
-
-                                buildMenu(menu, menuItems);
-                            }
-                        }
-                    });
-                }
-            }, checkForUpdate.bind(this, menu, controls));
-        }, 2000);
-    }
-};
-
-
 exports.init = function (wv, controls) {
-
     var menu = new Menu();
     buildMenu(menu, defaultMenuItems);
-    checkForUpdate(menu, controls);
 
     for (var c in controls) {
         if (controls.hasOwnProperty(c)) {
