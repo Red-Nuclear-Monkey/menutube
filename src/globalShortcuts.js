@@ -16,7 +16,7 @@ exports.init = function (wv) {
             case ('Cmd+Shift+j'):
                 wv.send('changeTime', -15);
                 break;
-            case ('Cmd+Alt+Y'):
+            case ('Cmd+Shift+y'):
                 ipcRenderer.send('toggleWindow');
                 break;
         }

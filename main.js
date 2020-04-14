@@ -15,7 +15,7 @@ var accelerators = [
     'Cmd+Shift+Right',
     'Cmd+Shift+j',
     'Cmd+Shift+l',
-    'Cmd+Shift+Y'
+    'Cmd+Shift+y'
 ];
 
 var defaultMenu = [
