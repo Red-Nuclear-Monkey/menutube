@@ -74,27 +74,11 @@ var defaultMenuItems = [
             hideAndPause();
 
             var path = app.getAppPath();
-            win.loadURL('file://' + path + '/views/preferences.html#media-keys');
+            win.loadURL('file://' + path + '/views/preferences.html');
             win.show()
         },
         role : 'help'
     },
-    // {
-    //     label : 'Preferences',
-    //     click : function () {
-    //         var win = new BrowserWindow({
-    //             // width : 800,
-    //             // height : 600,
-    //             frame : true
-    //         });
-    //
-    //         hideAndPause();
-    //         var path = app.getAppPath();
-    //         win.loadURL('file://' + path + '/views/preferences.html');
-    //         win.show()
-    //     },
-    //     role : 'help'
-    // },
     {
         type : 'separator'
     },

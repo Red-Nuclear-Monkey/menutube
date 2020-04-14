@@ -9,3 +9,6 @@ docs/_site
 
 .idea
 builds/
+
+embeddedprovisionprofile.provisionprofile
+dist
