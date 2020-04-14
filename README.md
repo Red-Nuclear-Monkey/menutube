@@ -48,3 +48,14 @@ bundle install --path vendor/bundle
 ```
 bundle exec jekyll serve
 ```
+
+
+### Build for distribution (MAS)
+
+1. Open `package.json` and update version.
+2. Go to `https://developer.apple.com/account/resources/profiles/list` and download `embeddedprovisionprofile.provisionprofile`. Store it inside `entitlements` folder.
+3. Create certificates https://github.com/nwjs/nw.js/wiki/MAS%3A-Requesting-certificates + Developer ID Application certificate which is missing from the link.
+4. Run `npm run dist`.
+5. See `dist` folder for your builds.
+
+This will build 2 targets according to `build` in `package.json`.  
