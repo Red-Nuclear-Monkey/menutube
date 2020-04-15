@@ -11,13 +11,7 @@ import PropTypes from 'prop-types';
 import './layout.css';
 
 const Layout = ({ children }) => {
-    return (
-        <>
-            <div>
-                <main>{children}</main>
-            </div>
-        </>
-    );
+    return <main>{children}</main>;
 };
 
 Layout.propTypes = {
