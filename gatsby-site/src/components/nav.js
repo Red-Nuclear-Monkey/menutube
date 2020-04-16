@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import menutube from '../images/menutube-play.png';
 
 const BlockContainer = styled.div`
-    background: transparent;
-    display: flex;
-    flex-direction: row;
     position: fixed;
-    height: 5rem;
-    font-size: 1.2rem;
-    width: 100%;
     top: 0;
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    flex-direction: row;
     justify-content: center;
+    background: transparent;
+    font-size: 1.2rem;
 
     span {
         margin: 1.5rem 2.5rem 0 2.5rem;
@@ -24,10 +24,10 @@ const BlockContainer = styled.div`
 `;
 
 const Logo = styled.div`
+    width: 4rem;
     background-image: url(${menutube});
     background-repeat: no-repeat;
     background-size: contain;
-    width: 4rem;
 `;
 
 const Nav = () => (

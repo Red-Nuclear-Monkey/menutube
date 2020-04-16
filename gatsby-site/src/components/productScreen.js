@@ -4,9 +4,9 @@ import appleWhite from '../images/apple-donwload-white.svg';
 import screenshots from '../images/screenshots.png';
 
 const Background = styled.div`
-    background: ${props => props.theme.colors.black};
     min-height: 100vh;
     max-height: 100vh;
+    background: ${props => props.theme.colors.black};
 `;
 
 const BlockContainer = styled.div`
@@ -17,50 +17,50 @@ const BlockContainer = styled.div`
 const Content = styled.div`
     display: block;
     flex-direction: column;
-    text-align: center;
     padding-top: 17rem;
     margin-left: 10rem;
+    text-align: center;
 `;
 
 const Title = styled.div`
+    padding: 0 2rem;
     color: ${props => props.theme.colors.white};
     font-size: 8rem;
-    padding: 0 2rem;
 `;
 
 const SubTitle = styled.div`
+    margin-right: 30rem;
     color: ${props => props.theme.colors.white};
     font-size: 4rem;
     font-weight: lighter;
-    margin-right: 30rem;
 `;
 
 const Sentence = styled.div`
+    padding-left: 6rem;
     color: ${props => props.theme.colors.white};
     font-size: 1.5rem;
     font-style: italic;
     font-weight: lighter;
-    padding-left: 6rem;
 `;
 
 const AppleDonwloadWhite = styled.div`
-    background-image: url(${appleWhite});
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 15rem;
     height: 10rem;
     margin-top: 1rem;
     margin-left: 17rem;
+    background-image: url(${appleWhite});
+    background-repeat: no-repeat;
+    background-size: contain;
 `;
 
 const Screenshots = styled.div`
-    background-image: url(${screenshots});
     display: flex;
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 40rem;
     height: 40rem;
     margin: 12rem auto 0 auto;
+    background-image: url(${screenshots});
+    background-repeat: no-repeat;
+    background-size: contain;
 `;
 
 const Product = () => (

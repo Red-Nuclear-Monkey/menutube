@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Background = styled.div`
-    background: ${props => props.theme.colors.white};
     max-height: 100vh;
+    background: ${props => props.theme.colors.white};
 `;
 
 const BlockContainer = styled.div`
@@ -29,8 +29,8 @@ const DecorationTitle = styled.div`
 `;
 
 const Carousel = styled.div`
-    text-align: center;
     padding: 10rem 0;
+    text-align: center;
 `;
 
 const Feature = () => (

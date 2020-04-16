@@ -2,51 +2,51 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Background = styled.div`
-    background: ${props => props.theme.colors.black};
     max-height: 100vh;
+    background: ${props => props.theme.colors.black};
 `;
 
 const Content = styled.div`
     display: block;
     flex-direction: column;
-    text-align: center;
     padding: 20rem 0;
+    text-align: center;
 `;
 
 const Title = styled.div`
+    padding: 0 18rem;
     color: ${props => props.theme.colors.white};
     font-size: 4rem;
-    padding: 0 18rem;
 `;
 
 const SubTitle = styled.div`
+    color: ${props => props.theme.colors.white};
     font-size: 3rem;
     font-weight: normal;
-    color: ${props => props.theme.colors.white};
 `;
 
 const Sentence = styled.div`
+    color: ${props => props.theme.colors.white};
     font-size: 1.5rem;
     font-weight: normal;
-    color: ${props => props.theme.colors.white};
 `;
 
 const Donate = styled.button`
-    background-color: ${props => props.theme.colors.redOrange};
-    border: none;
-    color: ${props => props.theme.colors.white};
-    border-radius: 3rem;
-    font-size: 1.2rem;
-    font-weight: bold;
     width: 10rem;
     height: 3rem;
+    border: none;
+    background-color: ${props => props.theme.colors.redOrange};
+    border-radius: 3rem;
+    color: ${props => props.theme.colors.white};
+    font-size: 1.2rem;
+    font-weight: bold;
 `;
 
 const Footer = styled.footer`
+    padding-bottom: 1rem;
     background: ${props => props.theme.colors.black};
     color: white;
     text-align: center;
-    padding-bottom: 1rem;
 `;
 
 const A = styled.a`
