@@ -10,13 +10,18 @@ const Background = styled.div`
 
 const BlockContainer = styled.div`
     display: flex;
+    height: 50vh;
     flex-direction: row;
-    padding: 15rem 0;
+    align-items: center;
+    justify-content: center;
 `;
 
 const ColumnTitleContent = styled.div`
-    width: 50%;
     flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 40%;
+    
 `;
 
 const Title = styled.div`
@@ -25,15 +30,17 @@ const Title = styled.div`
 `;
 
 const Text = styled.div`
-    width: 80%;
     color: ${props => props.theme.colors.black};
 `;
 
 const ColumnImageOneText = styled.div`
     width: 13rem;
     height: 18rem;
+    display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 2rem;
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: .8rem;
 `;
@@ -41,7 +48,6 @@ const ColumnImageOneText = styled.div`
 const GitHub = styled.div`
     width: 7rem;
     height: 7rem;
-    margin: 2rem auto;
     background-image: url(${github});
     background-repeat: no-repeat;
     background-size: contain;
@@ -51,15 +57,16 @@ const ImageText = styled.div`
     color: ${props => props.theme.colors.white};
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
 `;
 
 const ColumnImageTwo = styled.div`
     width: 15rem;
     height: 7rem;
+    margin-left: 2rem;
+    display: flex;
     flex-direction: column;
-    margin-top: 3rem;
-    margin-left: 5rem;
+    justify-content: center;
+    align-items: center;
     background-color: ${props => props.theme.colors.black};
     border-radius: .8rem;
 `;
@@ -67,7 +74,6 @@ const ColumnImageTwo = styled.div`
 const RedNuclearMonkey = styled.div`
     width: 10rem;
     height: 3rem;
-    margin: 2rem auto;
     background-image: url(${rednuc});
     background-repeat: no-repeat;
     background-size: contain;

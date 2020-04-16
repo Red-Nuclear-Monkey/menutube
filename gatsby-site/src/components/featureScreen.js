@@ -7,8 +7,10 @@ const Background = styled.div`
 `;
 
 const BlockContainer = styled.div`
-    display: block;
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    max-height: 100vh;
 `;
 
 const RowTitle = styled.div`
@@ -29,8 +31,7 @@ const DecorationTitle = styled.div`
 `;
 
 const Carousel = styled.div`
-    padding: 10rem 0;
-    text-align: center;
+    padding: 5rem 0;
 `;
 
 const Feature = () => (

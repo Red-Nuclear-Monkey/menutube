@@ -7,20 +7,21 @@ const Background = styled.div`
 `;
 
 const Content = styled.div`
-    display: block;
+    display: flex;
+    height: 50vh;
     flex-direction: column;
-    padding: 20rem 0;
-    text-align: center;
+    align-items: center;
+    justify-content: center;
 `;
 
 const Title = styled.div`
-    padding: 0 18rem;
     color: ${props => props.theme.colors.white};
     font-size: 4rem;
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
+    margin-top: 1rem;
     font-size: 3rem;
     font-weight: normal;
 `;
@@ -29,6 +30,7 @@ const Sentence = styled.div`
     color: ${props => props.theme.colors.white};
     font-size: 1.5rem;
     font-weight: normal;
+    margin-top: 1rem;
 `;
 
 const Donate = styled.button`
@@ -40,21 +42,10 @@ const Donate = styled.button`
     color: ${props => props.theme.colors.white};
     font-size: 1.2rem;
     font-weight: bold;
-`;
-
-const Footer = styled.footer`
-    padding-bottom: 1rem;
-    background: ${props => props.theme.colors.black};
-    color: white;
-    text-align: center;
-`;
-
-const A = styled.a`
-    color: ${props => props.theme.colors.blue};
+    margin-top: 1rem;
 `;
 
 const Support = () => (
-    <>
         <Background>
             <Content>
                 <Title>Thanks for your support!</Title>
@@ -66,11 +57,6 @@ const Support = () => (
                 <Donate>DONATE</Donate>
             </Content>
         </Background>
-        <Footer>
-            © 2020 Red Nuclear Monkey -{' '}
-            <A href="https://www.rednuclearmonkey.com">rednuclearmonkey.com</A>
-        </Footer>
-    </>
 );
 
 export default Support;
