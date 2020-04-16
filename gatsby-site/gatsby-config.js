@@ -1,8 +1,8 @@
 module.exports = {
-    pathPrefix: '/menutube',
+    pathPrefix: '/',
     siteMetadata: {
-        title: `Gatsby Default Starter`,
-        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        title: `MenuTube`,
+        description: `Catch YouTube into your macOS menu bar!`,
         author: `@gatsbyjs`
     },
     plugins: [

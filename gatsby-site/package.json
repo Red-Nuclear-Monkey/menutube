@@ -45,7 +45,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "gatsby build --prefix-paths && echo 'menutube.rednuclearmonkey.com' > ./public/CNAME && gh-pages -d public",
     "lint:css": "stylelint './src/**/*.js'",
     "lint:fix:css": "stylelint --fix './src/**/*.js'"
   },
