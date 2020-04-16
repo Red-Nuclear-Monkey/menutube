@@ -12,7 +12,7 @@ const Content = styled.div`
     display: block;
     flex-direction: column;
     text-align: center;
-        padding: 20rem 0;
+    padding: 20rem 0;
 `;
 
 const Title = styled.div`
@@ -59,7 +59,7 @@ const Download = () => (
                 website into your macOS’s menu bar?
             </Sentence>
             <Release>Get the last release</Release>
-            <AppleDonwloadBlack/>
+            <AppleDonwloadBlack />
         </Content>
     </Background>
 );

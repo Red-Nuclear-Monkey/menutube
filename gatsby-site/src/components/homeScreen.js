@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
-import listen from "../images/listen.png";
+import listen from '../images/listen.png';
 
 const Background = styled.div`
     background: ${props => props.theme.colors.white};
@@ -37,7 +37,6 @@ const Play = styled.div`
     width: 15rem;
     height: 10rem;
     margin: 2rem auto 0 auto;
-
 `;
 
 const Listen = styled.div`
@@ -50,7 +49,6 @@ const Listen = styled.div`
     position: relative;
     bottom: 10rem;
     left: 20rem;
-
 `;
 
 const Home = () => (
@@ -60,8 +58,8 @@ const Home = () => (
             <SubTitle>
                 * or anything else that doesn’t require to focus on video
             </SubTitle>
-            <Play/>
-            <Listen/>
+            <Play />
+            <Listen />
         </Content>
     </Background>
 );

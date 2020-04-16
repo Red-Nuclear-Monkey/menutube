@@ -11,7 +11,7 @@ const Background = styled.div`
 const BlockContainer = styled.div`
     display: flex;
     flex-direction: row;
-        padding: 15rem 0;
+    padding: 15rem 0;
 `;
 
 const ColumnTitleContent = styled.div`
@@ -45,7 +45,6 @@ const GitHub = styled.div`
     height: 7rem;
     width: 7rem;
     margin: 2rem auto;
-    
 `;
 
 const ImageText = styled.div`
@@ -72,23 +71,29 @@ const RedNuclearMonkey = styled.div`
     height: 3rem;
     width: 10rem;
     margin: 2rem auto;
-    
 `;
 
-
-const Github = () => <Background>
-    <BlockContainer>
-        <ColumnTitleContent>
-            <Title>GitHub</Title>
-            <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                laboris nisi ut aliquip ex ea commodo consequat.</Text>
-        </ColumnTitleContent>
-        <ColumnImageOneText><GitHub/>
-            <ImageText>OLD REPO</ImageText></ColumnImageOneText>
-        <ColumnImageTwo><RedNuclearMonkey/></ColumnImageTwo>
-    </BlockContainer>
-</Background>;
+const Github = () => (
+    <Background>
+        <BlockContainer>
+            <ColumnTitleContent>
+                <Title>GitHub</Title>
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </Text>
+            </ColumnTitleContent>
+            <ColumnImageOneText>
+                <GitHub />
+                <ImageText>OLD REPO</ImageText>
+            </ColumnImageOneText>
+            <ColumnImageTwo>
+                <RedNuclearMonkey />
+            </ColumnImageTwo>
+        </BlockContainer>
+    </Background>
+);
 
 export default Github;

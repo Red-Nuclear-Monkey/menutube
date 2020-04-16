@@ -70,9 +70,9 @@ const Product = () => (
                 <SubTitle>Use</SubTitle>
                 <Title>MenuTube</Title>
                 <Sentence>YouTube into your macOS menu bar</Sentence>
-                <AppleDonwloadWhite/>
+                <AppleDonwloadWhite />
             </Content>
-            <Screenshots/>
+            <Screenshots />
         </BlockContainer>
     </Background>
 );

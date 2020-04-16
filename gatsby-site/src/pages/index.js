@@ -8,14 +8,12 @@ import Feature from '../components/featureScreen';
 import Download from '../components/downloadScreen';
 import Github from '../components/githubScreen';
 import Support from '../components/supportScreen';
-import Nav from "../components/nav";
-
-
+import Nav from '../components/nav';
 
 const IndexPage = () => (
     <Layout>
         <Theme>
-            <Nav/>
+            <Nav />
             <Home />
             <Product />
             <Feature />
