@@ -17,19 +17,19 @@ const Content = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.mainHeader}rem;
+    font-size: ${props => props.theme.fontsize.mainHeader};
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-size: ${props => props.theme.fontsize.secondHeader};
     font-weight: 100;
 `;
 
 const Sentence = styled.div`
     width: 90%;
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
+    font-size: ${props => props.theme.fontsize.thirdHeader};
     font-style: italic;
     font-weight: 100;
     text-align: center;
@@ -37,7 +37,7 @@ const Sentence = styled.div`
 
 const Release = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
     font-weight: 700;
 `;
 

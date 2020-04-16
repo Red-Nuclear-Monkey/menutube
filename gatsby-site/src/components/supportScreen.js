@@ -16,19 +16,19 @@ const Content = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-size: ${props => props.theme.fontsize.secondHeader};
 `;
 
 const SubTitle = styled.div`
     margin-top: 1rem;
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
+    font-size: ${props => props.theme.fontsize.thirdHeader};
 `;
 
 const Sentence = styled.div`
     margin-top: 1rem;
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
 `;
 
 const Donate = styled.button`
@@ -37,9 +37,9 @@ const Donate = styled.button`
     border: none;
     margin-top: 1rem;
     background-color: ${props => props.theme.colors.redOrange};
-    border-radius: ${props => props.theme.borderRadius.buttonBorderRadius}rem;
+    border-radius: ${props => props.theme.borderRadius.buttonBorderRadius};
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.buttonContent}rem;
+    font-size: ${props => props.theme.fontsize.buttonContent};
     font-weight: 700;
 `;
 

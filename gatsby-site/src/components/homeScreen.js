@@ -18,14 +18,14 @@ const Content = styled.div`
 const Title = styled.div`
     width: 70rem;
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-size: ${props => props.theme.fontsize.secondHeader};
     text-align: center;
 `;
 
 const SubTitle = styled.div`
     margin-top: 1rem;
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
     font-style: italic;
 `;
 

@@ -22,7 +22,7 @@ const RowTitle = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-size: ${props => props.theme.fontsize.secondHeader};
 `;
 
 const DecorationTitle = styled.div`

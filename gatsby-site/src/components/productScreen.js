@@ -24,18 +24,18 @@ const Content = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.mainHeader}rem;
+    font-size: ${props => props.theme.fontsize.mainHeader};
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
+    font-size: ${props => props.theme.fontsize.thirdHeader};
     font-weight: 100;
 `;
 
 const Sentence = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
     font-style: italic;
     font-weight: 100;
 `;

@@ -10,7 +10,7 @@ const BlockContainer = styled.div`
     flex-direction: row;
     justify-content: center;
     background: transparent;
-    font-size: ${props => props.theme.fontsize.navTitles}rem;
+    font-size: ${props => props.theme.fontsize.navTitles};
 
     span {
         margin: 1.5rem 2.5rem 0 2.5rem;

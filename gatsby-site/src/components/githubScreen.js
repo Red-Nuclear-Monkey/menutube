@@ -25,12 +25,12 @@ const ColumnTitleContent = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-size: ${props => props.theme.fontsize.secondHeader};
 `;
 
 const Text = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
     text-align: justify;
 `;
 
@@ -43,7 +43,7 @@ const ColumnImageOneText = styled.div`
     justify-content: space-evenly;
     margin-left: 2rem;
     background-color: ${props => props.theme.colors.redOrange};
-    border-radius: ${props => props.theme.borderRadius.cardBorderRadius}rem;
+    border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
 `;
 
 const GitHub = styled.div`
@@ -56,7 +56,7 @@ const GitHub = styled.div`
 
 const ImageText = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default}rem;
+    font-size: ${props => props.theme.fontsize.default};
     font-weight: 700;
 `;
 
@@ -69,7 +69,7 @@ const ColumnImageTwo = styled.div`
     justify-content: center;
     margin-left: 2rem;
     background-color: ${props => props.theme.colors.black};
-    border-radius: ${props => props.theme.borderRadius.cardBorderRadius}rem;
+    border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
 `;
 
 const RedNuclearMonkey = styled.div`

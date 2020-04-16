@@ -10,16 +10,16 @@ const theme = {
         blue: '#0975C3'
     },
     borderRadius: {
-        cardBorderRadius: 0.8,
-        buttonBorderRadius: 3
+        cardBorderRadius: [0.8, 'rem'],
+        buttonBorderRadius: [3, 'rem']
     },
     fontsize: {
-        mainHeader: 8,
-        secondHeader: 5,
-        thirdHeader: 3,
-        default: 1.5,
-        buttonContent: 1.3,
-        navTitles: 1.2
+        mainHeader: [8, 'rem'],
+        secondHeader: [5, 'rem'],
+        thirdHeader: [3, 'rem'],
+        default: [1.5, 'rem'],
+        buttonContent: [1.3, 'rem'],
+        navTitles: [1.2, 'rem']
     }
 };
 
