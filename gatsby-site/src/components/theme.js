@@ -17,9 +17,15 @@ const theme = {
         mainHeader: [8, 'rem'],
         secondHeader: [5, 'rem'],
         thirdHeader: [3, 'rem'],
+        fourthHeader: [2, 'rem'],
         default: [1.5, 'rem'],
         buttonContent: [1.3, 'rem'],
         navTitles: [1.2, 'rem']
+    },
+    marginTop: {
+        smallSpace: [2, 'rem'],
+        mediumSpace: [4, 'rem'],
+        highSpace: [6, 'rem']
     }
 };
 

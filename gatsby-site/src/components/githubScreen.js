@@ -24,24 +24,31 @@ const ColumnTitleContent = styled.div`
 `;
 
 const Title = styled.div`
+    border-bottom-width: .4rem;
+    border-bottom-style: solid;
+    border-bottom-color: ${props => props.theme.colors.redOrange};
     color: ${props => props.theme.colors.black};
     font-size: ${props => props.theme.fontsize.secondHeader};
+    font-weight: 900;
 `;
 
 const Text = styled.div`
+    margin-top: ${props => props.theme.marginTop.smallSpace};
     color: ${props => props.theme.colors.black};
     font-size: ${props => props.theme.fontsize.default};
+    font-weight: 300;
     text-align: justify;
 `;
 
 const ColumnImageOneText = styled.div`
     display: flex;
     width: 13rem;
-    height: 18rem;
+    height: 16rem;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-left: 2rem;
+    margin-top: ${props => props.theme.marginTop.highSpace};
+    margin-left: 6rem;
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
 `;
@@ -67,7 +74,8 @@ const ColumnImageTwo = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 2rem;
+    margin-top: ${props => props.theme.marginTop.highSpace};
+    margin-left: 4rem;
     background-color: ${props => props.theme.colors.black};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
 `;

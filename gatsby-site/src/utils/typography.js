@@ -1,17 +1,9 @@
-import Typography from "typography"
+import Typography from 'typography';
 
 const typography = new Typography({
     baseLineHeight: 1.2,
-    headerFontFamily: [
-        "Roboto",
-        "Helvetica",
-        "sans-serif",
-    ],
-    bodyFontFamily: [
-        "Roboto",
-        "Helvetica",
-        "sans-serif",
-    ],
+    headerFontFamily: ['Roboto', 'Helvetica', 'sans-serif'],
+    bodyFontFamily: ['Roboto', 'Helvetica', 'sans-serif']
 });
 
-export default typography
+export default typography;

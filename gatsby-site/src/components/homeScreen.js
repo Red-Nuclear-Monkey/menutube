@@ -16,23 +16,29 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    width: 70rem;
+    width: 60%;
     color: ${props => props.theme.colors.black};
     font-size: ${props => props.theme.fontsize.secondHeader};
+    font-weight: 300;
     text-align: center;
+
+    b {
+        font-weight: 400;
+    }
 `;
 
 const SubTitle = styled.div`
-    margin-top: 1rem;
+    margin-top: ${props => props.theme.marginTop.smallSpace};
     color: ${props => props.theme.colors.black};
     font-size: ${props => props.theme.fontsize.default};
     font-style: italic;
+    font-weight: 300;
 `;
 
 const Play = styled.div`
     width: 15rem;
     height: 10rem;
-    margin-top: 2rem;
+    margin-top: ${props => props.theme.marginTop.smallSpace};
     background-image: url(${play});
     background-repeat: no-repeat;
     background-size: contain;
@@ -41,7 +47,9 @@ const Play = styled.div`
 const Home = () => (
     <Background>
         <Content>
-            <Title>Do you use YouTube for listening podcasts?</Title>
+            <Title>
+                Do you use YouTube for listening <b>podcasts</b>?
+            </Title>
             <SubTitle>
                 * or anything else that doesn’t require to focus on video
             </SubTitle>

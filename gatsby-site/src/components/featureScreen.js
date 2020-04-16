@@ -17,17 +17,18 @@ const RowTitle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding-top: 4rem;
+    margin-top: ${props => props.theme.marginTop.mediumSpace};
 `;
 
 const Title = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader};
+    font-size: ${props => props.theme.fontsize.thirdHeader};
+    font-weight: 900;
 `;
 
 const DecorationTitle = styled.div`
     color: ${props => props.theme.colors.redOrange};
-    font-size: 5rem;
+    font-size: ${props => props.theme.fontsize.thirdHeader};
 `;
 
 const Carousel = styled.div`
@@ -39,7 +40,7 @@ const Feature = () => (
         <BlockContainer>
             <RowTitle>
                 <DecorationTitle>-</DecorationTitle>
-                <Title>Features</Title>
+                <Title>FEATURES</Title>
                 <DecorationTitle>-</DecorationTitle>
             </RowTitle>
             <Carousel>IMPLEMENT CAROUSEL</Carousel>

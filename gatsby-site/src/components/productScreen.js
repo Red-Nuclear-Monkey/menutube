@@ -25,25 +25,25 @@ const Content = styled.div`
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
     font-size: ${props => props.theme.fontsize.mainHeader};
+    font-weight: 700;
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader};
-    font-weight: 100;
+    font-size: ${props => props.theme.fontsize.secondHeader};
+    font-weight: 300;
 `;
 
 const Sentence = styled.div`
     color: ${props => props.theme.colors.white};
     font-size: ${props => props.theme.fontsize.default};
-    font-style: italic;
-    font-weight: 100;
+    font-weight: 300;
 `;
 
 const AppleDonwloadWhite = styled.div`
     width: 15rem;
     height: 10rem;
-    margin-top: 1rem;
+    margin-top: ${props => props.theme.marginTop.smallSpace};
     background-image: url(${appleWhite});
     background-repeat: no-repeat;
     background-size: contain;

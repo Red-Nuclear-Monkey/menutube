@@ -10,9 +10,11 @@ import Github from '../components/githubScreen';
 import Support from '../components/supportScreen';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
+import SEO from '../components/seo';
 
 const IndexPage = () => (
     <Layout>
+        <SEO title="Home" />
         <Theme>
             <Nav />
             <Home />
