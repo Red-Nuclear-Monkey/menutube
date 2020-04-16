@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const FooterSite = styled.footer`
     padding-bottom: 1rem;
     background: ${props => props.theme.colors.black};
-    color: white;
+    color: ${props => props.theme.colors.white};
     text-align: center;
 `;
 
@@ -13,10 +13,10 @@ const A = styled.a`
 `;
 
 const Footer = () => (
-        <FooterSite>
-            © 2020 Red Nuclear Monkey -{' '}
-            <A href="https://www.rednuclearmonkey.com">rednuclearmonkey.com</A>
-        </FooterSite>
+    <FooterSite>
+        © 2020 Red Nuclear Monkey -{' '}
+        <A href="https://www.rednuclearmonkey.com">rednuclearmonkey.com</A>
+    </FooterSite>
 );
 
 export default Footer;

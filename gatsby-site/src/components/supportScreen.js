@@ -16,47 +16,45 @@ const Content = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 4rem;
+    font-size: ${props => props.theme.fontsize.secondHeader}rem;
 `;
 
 const SubTitle = styled.div`
-    color: ${props => props.theme.colors.white};
     margin-top: 1rem;
-    font-size: 3rem;
-    font-weight: normal;
+    color: ${props => props.theme.colors.white};
+    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
 `;
 
 const Sentence = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: 1.5rem;
-    font-weight: normal;
     margin-top: 1rem;
+    color: ${props => props.theme.colors.white};
+    font-size: ${props => props.theme.fontsize.default}rem;
 `;
 
 const Donate = styled.button`
     width: 10rem;
     height: 3rem;
     border: none;
-    background-color: ${props => props.theme.colors.redOrange};
-    border-radius: 3rem;
-    color: ${props => props.theme.colors.white};
-    font-size: 1.2rem;
-    font-weight: bold;
     margin-top: 1rem;
+    background-color: ${props => props.theme.colors.redOrange};
+    border-radius: ${props => props.theme.borderRadius.buttonBorderRadius}rem;
+    color: ${props => props.theme.colors.white};
+    font-size: ${props => props.theme.fontsize.buttonContent}rem;
+    font-weight: 700;
 `;
 
 const Support = () => (
-        <Background>
-            <Content>
-                <Title>Thanks for your support!</Title>
-                <SubTitle>
-                    If you would like to be thankful for this tool, please feel
-                    free to donate.
-                </SubTitle>
-                <Sentence>Your donations help developers.</Sentence>
-                <Donate>DONATE</Donate>
-            </Content>
-        </Background>
+    <Background>
+        <Content>
+            <Title>Thanks for your support!</Title>
+            <SubTitle>
+                If you would like to be thankful for this tool, please feel free
+                to donate.
+            </SubTitle>
+            <Sentence>Your donations help developers.</Sentence>
+            <Donate>DONATE</Donate>
+        </Content>
+    </Background>
 );
 
 export default Support;

@@ -16,18 +16,17 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    color: ${props => props.theme.colors.black};
-    font-size: 5rem;
     width: 70rem;
+    color: ${props => props.theme.colors.black};
+    font-size: ${props => props.theme.fontsize.secondHeader}rem;
     text-align: center;
 `;
 
 const SubTitle = styled.div`
-    color: ${props => props.theme.colors.black};
     margin-top: 1rem;
-    font-size: 1.5rem;
+    color: ${props => props.theme.colors.black};
+    font-size: ${props => props.theme.fontsize.default}rem;
     font-style: italic;
-    font-weight: normal;
 `;
 
 const Play = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import rednuc from '../images/rednuclear-monkey.png';
-import github from '../images/github.png';
+import redNuclearLogo from '../images/rednuclear-monkey.png';
+import githubLogo from '../images/github.png';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -17,64 +17,65 @@ const BlockContainer = styled.div`
 `;
 
 const ColumnTitleContent = styled.div`
-    flex-direction: column;
     display: flex;
-    align-items: center;
     width: 40%;
-    
+    flex-direction: column;
+    align-items: center;
 `;
 
 const Title = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: 3rem;
+    font-size: ${props => props.theme.fontsize.secondHeader}rem;
 `;
 
 const Text = styled.div`
     color: ${props => props.theme.colors.black};
+    font-size: ${props => props.theme.fontsize.default}rem;
+    text-align: justify;
 `;
 
 const ColumnImageOneText = styled.div`
+    display: flex;
     width: 13rem;
     height: 18rem;
-    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
+    justify-content: space-evenly;
     margin-left: 2rem;
     background-color: ${props => props.theme.colors.redOrange};
-    border-radius: .8rem;
+    border-radius: ${props => props.theme.borderRadius.cardBorderRadius}rem;
 `;
 
 const GitHub = styled.div`
     width: 7rem;
     height: 7rem;
-    background-image: url(${github});
+    background-image: url(${githubLogo});
     background-repeat: no-repeat;
     background-size: contain;
 `;
 
 const ImageText = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: ${props => props.theme.fontsize.default}rem;
+    font-weight: 700;
 `;
 
 const ColumnImageTwo = styled.div`
+    display: flex;
     width: 15rem;
     height: 7rem;
-    margin-left: 2rem;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
     background-color: ${props => props.theme.colors.black};
-    border-radius: .8rem;
+    border-radius: ${props => props.theme.borderRadius.cardBorderRadius}rem;
 `;
 
 const RedNuclearMonkey = styled.div`
     width: 10rem;
     height: 3rem;
-    background-image: url(${rednuc});
+    background-image: url(${redNuclearLogo});
     background-repeat: no-repeat;
     background-size: contain;
 `;

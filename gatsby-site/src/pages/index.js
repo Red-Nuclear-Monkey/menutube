@@ -9,7 +9,7 @@ import Download from '../components/downloadScreen';
 import Github from '../components/githubScreen';
 import Support from '../components/supportScreen';
 import Nav from '../components/nav';
-import Footer from "../components/footer";
+import Footer from '../components/footer';
 
 const IndexPage = () => (
     <Layout>
@@ -21,7 +21,7 @@ const IndexPage = () => (
             <Download />
             <Github />
             <Support />
-            <Footer/>
+            <Footer />
         </Theme>
     </Layout>
 );

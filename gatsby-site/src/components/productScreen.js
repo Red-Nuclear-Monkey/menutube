@@ -12,33 +12,32 @@ const BlockContainer = styled.div`
     display: flex;
     height: 100vh;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 `;
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 2rem;
-   
 `;
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 8rem;
+    font-size: ${props => props.theme.fontsize.mainHeader}rem;
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 4rem;
-    font-weight: lighter;
+    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
+    font-weight: 100;
 `;
 
 const Sentence = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 1.5rem;
+    font-size: ${props => props.theme.fontsize.default}rem;
     font-style: italic;
-    font-weight: lighter;
+    font-weight: 100;
 `;
 
 const AppleDonwloadWhite = styled.div`

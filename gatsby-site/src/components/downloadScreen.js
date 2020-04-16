@@ -17,26 +17,28 @@ const Content = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 5rem;
+    font-size: ${props => props.theme.fontsize.mainHeader}rem;
 `;
 
 const SubTitle = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 3rem;
-    font-weight: normal;
+    font-size: ${props => props.theme.fontsize.secondHeader}rem;
+    font-weight: 100;
 `;
 
 const Sentence = styled.div`
+    width: 90%;
     color: ${props => props.theme.colors.white};
-    font-size: 1.5rem;
+    font-size: ${props => props.theme.fontsize.thirdHeader}rem;
     font-style: italic;
-    font-weight: normal;
+    font-weight: 100;
+    text-align: center;
 `;
 
 const Release = styled.div`
     color: ${props => props.theme.colors.white};
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: ${props => props.theme.fontsize.default}rem;
+    font-weight: 700;
 `;
 
 const AppleDonwloadBlack = styled.div`

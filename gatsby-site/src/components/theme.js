@@ -8,6 +8,18 @@ const theme = {
         red: '#F22323',
         redOrange: '#D35C50',
         blue: '#0975C3'
+    },
+    borderRadius: {
+        cardBorderRadius: 0.8,
+        buttonBorderRadius: 3
+    },
+    fontsize: {
+        mainHeader: 8,
+        secondHeader: 5,
+        thirdHeader: 3,
+        default: 1.5,
+        buttonContent: 1.3,
+        navTitles: 1.2
     }
 };
 

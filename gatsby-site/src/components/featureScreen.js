@@ -8,9 +8,9 @@ const Background = styled.div`
 
 const BlockContainer = styled.div`
     display: flex;
+    max-height: 100vh;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
 `;
 
 const RowTitle = styled.div`
@@ -22,7 +22,7 @@ const RowTitle = styled.div`
 
 const Title = styled.div`
     color: ${props => props.theme.colors.black};
-    font-size: 5rem;
+    font-size: ${props => props.theme.fontsize.secondHeader}rem;
 `;
 
 const DecorationTitle = styled.div`

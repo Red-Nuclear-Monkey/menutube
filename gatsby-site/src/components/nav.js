@@ -4,14 +4,13 @@ import menutube from '../images/menutube-play.png';
 
 const BlockContainer = styled.div`
     position: fixed;
-    top: 0;
     display: flex;
     width: 100%;
     height: 5rem;
     flex-direction: row;
     justify-content: center;
     background: transparent;
-    font-size: 1.2rem;
+    font-size: ${props => props.theme.fontsize.navTitles}rem;
 
     span {
         margin: 1.5rem 2.5rem 0 2.5rem;
