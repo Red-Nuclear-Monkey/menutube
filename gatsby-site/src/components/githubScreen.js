@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import redNuclearLogo from '../images/rednuclear-monkey.png';
 import githubLogo from '../images/github.png';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -27,16 +28,20 @@ const Title = styled.div`
     border-bottom-width: .4rem;
     border-bottom-style: solid;
     border-bottom-color: ${props => props.theme.colors.redOrange};
-    color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader};
-    font-weight: 900;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.secondHeader,
+        900
+    )};
 `;
 
 const Text = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.default};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.default,
+        300
+    )};
     text-align: justify;
 `;
 
@@ -62,9 +67,11 @@ const GitHub = styled.div`
 `;
 
 const ImageText = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default};
-    font-weight: 700;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.default,
+        700
+    )};
 `;
 
 const ColumnImageTwo = styled.div`

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import appleblack from '../images/apple-download.svg';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     height: 100vh;
@@ -16,17 +17,21 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.mainHeader};
-    font-weight: 700;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.mainHeader,
+        700
+    )};
 `;
 
 const SubTitle = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.secondHeader};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.secondHeader,
+        300
+    )};
 
-    b {
+    .bold-text {
         font-weight: 500;
     }
 `;
@@ -34,17 +39,21 @@ const SubTitle = styled.div`
 const Sentence = styled.div`
     width: 85%;
     margin-top: ${props => props.theme.marginTop.mediumSpace};
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader};
-    font-weight: 100;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.thirdHeader,
+        100
+    )};
     text-align: center;
 `;
 
 const Release = styled.div`
     margin-top: ${props => props.theme.marginTop.mediumSpace};
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.fourthHeader};
-    font-weight: 700;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.fourthHeader,
+        700
+    )};
 `;
 
 const AppleDonwloadBlack = styled.div`
@@ -61,7 +70,7 @@ const Download = () => (
         <Content>
             <Title>MenuTube</Title>
             <SubTitle>
-                is totally <b>free</b>!
+                is totally <span className="bold-text">free</span>!
             </SubTitle>
             <Sentence>
                 So what are you waiting to put an entire full functional YouTube

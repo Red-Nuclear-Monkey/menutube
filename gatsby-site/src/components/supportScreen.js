@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -15,28 +16,35 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.thirdHeader};
-    font-weight: 400;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.thirdHeader,
+        400
+    )};
 `;
 
 const SubTitle = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.fourthHeader};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.fourthHeader,
+        300
+    )};
 
-    b {
+    .bold-text {
         font-weight: 500;
     }
 `;
 
 const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.fourthHeader};
-    font-variant: all-small-caps;
-    font-weight: 100;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.fourthHeader,
+        100,
+        'normal',
+        'all-small-caps'
+    )};
 `;
 
 const Donate = styled.button`
@@ -46,10 +54,12 @@ const Donate = styled.button`
     margin-top: ${props => props.theme.marginTop.smallSpace};
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: ${props => props.theme.borderRadius.buttonBorderRadius};
-    color: ${props => props.theme.colors.white};
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.buttonContent,
+        700
+    )};
     cursor: pointer;
-    font-size: ${props => props.theme.fontsize.buttonContent};
-    font-weight: 700;
 `;
 
 const Support = () => (
@@ -58,7 +68,7 @@ const Support = () => (
             <Title>Thanks for your support!</Title>
             <SubTitle>
                 If you would like to be thankful for this tool, please{' '}
-                <b>feel free</b> to donate.
+                <span className="bold-text">feel free</span> to donate.
             </SubTitle>
             <Sentence>Your donations help developers.</Sentence>
             <Donate>DONATE</Donate>

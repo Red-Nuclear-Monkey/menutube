@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import appleWhite from '../images/apple-donwload-white.svg';
 import screenshots from '../images/screenshots.png';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     height: 100vh;
@@ -23,21 +24,27 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.mainHeader};
-    font-weight: 700;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.mainHeader,
+        700
+    )};
 `;
 
 const SubTitle = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.secondHeader};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.secondHeader,
+        300
+    )};
 `;
 
 const Sentence = styled.div`
-    color: ${props => props.theme.colors.white};
-    font-size: ${props => props.theme.fontsize.default};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.default,
+        300
+    )};
 `;
 
 const AppleDonwloadWhite = styled.div`

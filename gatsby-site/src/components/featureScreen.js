@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -21,14 +22,19 @@ const RowTitle = styled.div`
 `;
 
 const Title = styled.div`
-    color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.thirdHeader};
-    font-weight: 900;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.thirdHeader,
+        900
+    )};
 `;
 
 const DecorationTitle = styled.div`
-    color: ${props => props.theme.colors.redOrange};
-    font-size: ${props => props.theme.fontsize.thirdHeader};
+    ${FontStyle(
+        props => props.theme.colors.redOrange,
+        props => props.theme.fontsize.thirdHeader,
+        900
+    )};
 `;
 
 const Carousel = styled.div`

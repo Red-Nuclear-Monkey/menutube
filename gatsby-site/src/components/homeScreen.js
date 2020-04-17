@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
+import FontStyle from './fontStyle';
 
 const Background = styled.div`
     height: 100vh;
@@ -17,21 +18,31 @@ const Content = styled.div`
 
 const Title = styled.div`
     width: 60%;
-    color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.secondHeader};
-    font-weight: 300;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.secondHeader,
+        300
+    )};
     text-align: center;
 
-    b {
-        font-weight: 400;
+    .bold-text {
+        ${FontStyle(
+            props => props.theme.colors.white,
+            props => props.theme.fontsize.secondHeader,
+            400
+        )};
+        background-color: ${props => props.theme.colors.red};
     }
 `;
 
 const SubTitle = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    color: ${props => props.theme.colors.black};
-    font-size: ${props => props.theme.fontsize.default};
-    font-style: italic;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.default,
+        300,
+        'italic'
+    )};
     font-weight: 300;
 `;
 
@@ -48,7 +59,8 @@ const Home = () => (
     <Background>
         <Content>
             <Title>
-                Do you use YouTube for listening <b>podcasts</b>?
+                Do you use YouTube for listening{' '}
+                <span className="bold-text">podcasts</span>?
             </Title>
             <SubTitle>
                 * or anything else that doesn’t require to focus on video
