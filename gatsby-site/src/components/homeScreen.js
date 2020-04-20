@@ -33,6 +33,25 @@ const Title = styled.div`
         )};
         background-color: ${props => props.theme.colors.red};
     }
+
+    .bold-text::before {
+        animation: animate infinite 10s;
+        content: 'podcasts';
+    }
+
+    @keyframes animate {
+        20% {
+            content: 'podcasts';
+        }
+
+        50% {
+            content: 'audiobooks';
+        }
+
+        100% {
+            content: 'musics';
+        }
+    }
 `;
 
 const SubTitle = styled.div`
@@ -60,7 +79,7 @@ const Home = () => (
         <Content>
             <Title>
                 Do you use YouTube for listening{' '}
-                <span className="bold-text">podcasts</span>?
+                <span className="bold-text"></span>?
             </Title>
             <SubTitle>
                 * or anything else that doesn’t require to focus on video

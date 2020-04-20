@@ -74,6 +74,10 @@ const Carousel = styled.div`
             opacity: 1;
         }
     }
+
+    .slick-list {
+        margin: 0 10rem;
+    }
 `;
 
 const Item = styled.div`

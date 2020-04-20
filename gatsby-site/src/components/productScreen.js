@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import appleWhite from '../images/apple-donwload-white.svg';
 import screenshots from '../images/screenshots.png';
 import FontStyle from './fontStyle';
 
@@ -47,13 +46,21 @@ const Sentence = styled.div`
     )};
 `;
 
-const AppleDonwloadWhite = styled.div`
-    width: 15rem;
-    height: 10rem;
+const DownloadButton = styled.button`
+    width: 20rem;
+    height: 3.5rem;
+    border: none;
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    background-image: url(${appleWhite});
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: ${props => props.theme.colors.redOrange};
+    border-radius: ${props =>
+        props.theme.borderRadius.buttonBorderRadiusRounded};
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.buttonContent,
+        700
+    )};
+    cursor: pointer;
+    text-align: center;
 `;
 
 const Screenshots = styled.div`
@@ -72,7 +79,7 @@ const Product = () => (
                 <SubTitle>Use</SubTitle>
                 <Title>MenuTube</Title>
                 <Sentence>YouTube into your macOS menu bar</Sentence>
-                <AppleDonwloadWhite />
+                <DownloadButton>GET THE LAST RELEASE</DownloadButton>
             </Content>
             <Screenshots />
         </BlockContainer>

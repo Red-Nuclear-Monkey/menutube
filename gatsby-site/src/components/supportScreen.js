@@ -53,7 +53,8 @@ const Donate = styled.button`
     border: none;
     margin-top: ${props => props.theme.marginTop.smallSpace};
     background-color: ${props => props.theme.colors.redOrange};
-    border-radius: ${props => props.theme.borderRadius.buttonBorderRadius};
+    border-radius: ${props =>
+        props.theme.borderRadius.buttonBorderRadiusCircle};
     ${FontStyle(
         props => props.theme.colors.white,
         props => props.theme.fontsize.buttonContent,

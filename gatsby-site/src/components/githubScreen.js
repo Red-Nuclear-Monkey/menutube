@@ -56,6 +56,12 @@ const ColumnImageOneText = styled.div`
     margin-left: 6rem;
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    cursor: pointer;
+
+    :hover {
+        transform: scale(1.1);
+    }
 `;
 
 const GitHub = styled.div`
@@ -85,11 +91,18 @@ const ColumnImageTwo = styled.div`
     margin-left: 4rem;
     background-color: ${props => props.theme.colors.black};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    cursor: pointer;
+
+    :hover {
+        transform: scale(1.1);
+    }
 `;
 
 const RedNuclearMonkey = styled.div`
     width: 10rem;
     height: 3rem;
+    margin-top: .5rem;
     background-image: url(${redNuclearLogo});
     background-repeat: no-repeat;
     background-size: contain;

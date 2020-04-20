@@ -7,11 +7,13 @@ const theme = {
         white: '#FFFFFF',
         red: '#F22323',
         redOrange: '#D35C50',
-        blue: '#0975C3'
+        blue: '#0975C3',
+        green: '#00cc66'
     },
     borderRadius: {
         cardBorderRadius: [0.8, 'rem'],
-        buttonBorderRadius: [3, 'rem']
+        buttonBorderRadiusCircle: [3, 'rem'],
+        buttonBorderRadiusRounded: [0.5, 'rem']
     },
     fontsize: {
         mainHeader: [8, 'rem'],

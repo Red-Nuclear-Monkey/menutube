@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import appleblack from '../images/apple-download.svg';
 import FontStyle from './fontStyle';
 
 const Background = styled.div`
@@ -56,13 +55,21 @@ const Release = styled.div`
     )};
 `;
 
-const AppleDonwloadBlack = styled.div`
-    width: 15rem;
-    height: 10rem;
+const DownloadButton = styled.button`
+    width: 10rem;
+    height: 3rem;
+    border: none;
     margin-top: ${props => props.theme.marginTop.smallSpace};
-    background-image: url(${appleblack});
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-color: ${props => props.theme.colors.green};
+    border-radius: ${props =>
+        props.theme.borderRadius.buttonBorderRadiusCircle};
+    ${FontStyle(
+        props => props.theme.colors.white,
+        props => props.theme.fontsize.buttonContent,
+        700
+    )};
+    cursor: pointer;
+    text-align: center;
 `;
 
 const Download = () => (
@@ -77,7 +84,7 @@ const Download = () => (
                 website into your macOS’s menu bar?
             </Sentence>
             <Release>Get the last release</Release>
-            <AppleDonwloadBlack />
+            <DownloadButton>DOWNLOAD</DownloadButton>
         </Content>
     </Background>
 );
