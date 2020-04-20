@@ -13,7 +13,7 @@ const Background = styled.div`
 
 const BlockContainer = styled.div`
     display: flex;
-    height: 80vh;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
 `;
@@ -22,7 +22,7 @@ const RowTitle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: ${props => props.theme.marginTop.mediumSpace};
+    margin-top: 10rem;
 `;
 
 const Title = styled.div`
@@ -115,7 +115,7 @@ const settings = {
 };
 
 const Feature = () => (
-    <Background>
+    <Background id="features">
         <BlockContainer>
             <RowTitle>
                 <DecorationTitle>-</DecorationTitle>

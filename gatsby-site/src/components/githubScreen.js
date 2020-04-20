@@ -109,7 +109,7 @@ const RedNuclearMonkey = styled.div`
 `;
 
 const Github = () => (
-    <Background>
+    <Background id="github">
         <BlockContainer>
             <ColumnTitleContent>
                 <Title>GitHub</Title>

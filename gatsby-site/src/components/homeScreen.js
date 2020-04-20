@@ -75,7 +75,7 @@ const Play = styled.div`
 `;
 
 const Home = () => (
-    <Background>
+    <Background id="home">
         <Content>
             <Title>
                 Do you use YouTube for listening{' '}

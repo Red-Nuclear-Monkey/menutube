@@ -61,6 +61,10 @@ const DownloadButton = styled.button`
     )};
     cursor: pointer;
     text-align: center;
+
+    :hover {
+        transform: scale(1.05);
+    }
 `;
 
 const Screenshots = styled.div`
@@ -73,7 +77,7 @@ const Screenshots = styled.div`
 `;
 
 const Product = () => (
-    <Background>
+    <Background id="product">
         <BlockContainer>
             <Content>
                 <SubTitle>Use</SubTitle>

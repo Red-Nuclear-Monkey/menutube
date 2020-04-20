@@ -4,12 +4,12 @@ import FontStyle from './fontStyle';
 
 const Background = styled.div`
     max-height: 100vh;
-    background: ${props => props.theme.colors.black};
+    background: ${props => props.theme.colors.white};
 `;
 
 const Content = styled.div`
     display: flex;
-    height: 50vh;
+    height: 60vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,7 @@ const Content = styled.div`
 
 const Title = styled.div`
     ${FontStyle(
-        props => props.theme.colors.white,
+        props => props.theme.colors.black,
         props => props.theme.fontsize.thirdHeader,
         400
     )};
@@ -26,7 +26,7 @@ const Title = styled.div`
 const SubTitle = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
     ${FontStyle(
-        props => props.theme.colors.white,
+        props => props.theme.colors.black,
         props => props.theme.fontsize.fourthHeader,
         300
     )};
@@ -39,7 +39,7 @@ const SubTitle = styled.div`
 const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
     ${FontStyle(
-        props => props.theme.colors.white,
+        props => props.theme.colors.black,
         props => props.theme.fontsize.fourthHeader,
         100,
         'normal',
@@ -61,10 +61,14 @@ const Donate = styled.button`
         700
     )};
     cursor: pointer;
+
+    :hover {
+        transform: scale(1.1);
+    }
 `;
 
 const Support = () => (
-    <Background>
+    <Background id="support">
         <Content>
             <Title>Thanks for your support!</Title>
             <SubTitle>

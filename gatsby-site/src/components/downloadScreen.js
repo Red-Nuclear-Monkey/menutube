@@ -4,7 +4,35 @@ import FontStyle from './fontStyle';
 
 const Background = styled.div`
     height: 100vh;
-    background: ${props => props.theme.colors.redOrange};
+
+    .blur {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: ${props => props.theme.colors.redOrange};
+        opacity: .75;
+    }
+
+    .video-background {
+        position: fixed;
+        z-index: -99;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #000;
+    }
+
+    .video-foreground,
+    .video-background iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
 `;
 
 const Content = styled.div`
@@ -21,9 +49,11 @@ const Title = styled.div`
         props => props.theme.fontsize.mainHeader,
         700
     )};
+    z-index: 2;
 `;
 
 const SubTitle = styled.div`
+    z-index: 2;
     ${FontStyle(
         props => props.theme.colors.white,
         props => props.theme.fontsize.secondHeader,
@@ -36,6 +66,7 @@ const SubTitle = styled.div`
 `;
 
 const Sentence = styled.div`
+    z-index: 2;
     width: 85%;
     margin-top: ${props => props.theme.marginTop.mediumSpace};
     ${FontStyle(
@@ -47,6 +78,7 @@ const Sentence = styled.div`
 `;
 
 const Release = styled.div`
+    z-index: 2;
     margin-top: ${props => props.theme.marginTop.mediumSpace};
     ${FontStyle(
         props => props.theme.colors.white,
@@ -56,6 +88,7 @@ const Release = styled.div`
 `;
 
 const DownloadButton = styled.button`
+    z-index: 2;
     width: 10rem;
     height: 3rem;
     border: none;
@@ -70,10 +103,25 @@ const DownloadButton = styled.button`
     )};
     cursor: pointer;
     text-align: center;
+
+    :hover {
+        transform: scale(1.05);
+    }
 `;
 
 const Download = () => (
-    <Background>
+    <Background id="download">
+        <div className="blur" />
+        <div className="video-background">
+            <div className="video-foreground">
+                <iframe
+                    title="video"
+                    src="https://www.youtube.com/embed/oG7Tj5P5F14?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1&playlist=oG7Tj5P5F14"
+                    frameBorder="0"
+                    allowFullScreen
+                />
+            </div>
+        </div>
         <Content>
             <Title>MenuTube</Title>
             <SubTitle>

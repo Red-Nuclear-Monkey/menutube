@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 const FooterSite = styled.footer`
     padding-bottom: 1rem;
-    background: ${props => props.theme.colors.black};
-    color: ${props => props.theme.colors.white};
+    background: ${props => props.theme.colors.white};
+    color: ${props => props.theme.colors.black};
     text-align: center;
 `;
 
