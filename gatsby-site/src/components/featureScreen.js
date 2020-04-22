@@ -48,6 +48,10 @@ const Carousel = styled.div`
         width: 100rem;
     }
 
+    .slick-next {
+        right: 1rem;
+    }
+
     .slick-prev::before {
         color: ${props => props.theme.colors.redOrange};
         font-size: 4rem;

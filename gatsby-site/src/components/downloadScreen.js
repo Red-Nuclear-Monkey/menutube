@@ -12,7 +12,7 @@ const Background = styled.div`
         width: 100%;
         height: 100%;
         background-color: ${props => props.theme.colors.redOrange};
-        opacity: .75;
+        opacity: .85;
     }
 
     .video-background {
@@ -116,40 +116,29 @@ const DownloadButton = styled.button`
 `;
 
 class Download extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     componentDidMount() {
         if (typeof window !== 'undefined') {
             var Plyr = require('plyr');
             new Plyr('#player', {
                 autoplay: true,
+                loop: { active: true },
                 ratio: '16:9',
-                youtube: {
-                    controls: 0,
-                    iv_load_policy: 3,
-                    modestbranding: 1,
-                    showinfo: 0,
-                    loop: 1,
-                    playlist: 'oG7Tj5P5F14'
-                },
                 controls: false
             });
         }
     }
+
     render() {
         return (
             <Background id="download">
-                <div className="container">
+                <div className="blur" />
+                <div className="video-background">
                     <div
                         id="player"
-                        data-plyr-provider="youtube"
-                        data-plyr-embed-id="oG7Tj5P5F14"
+                        data-plyr-provider="vimeo"
+                        data-plyr-embed-id="45817468"
                     />
                 </div>
-                <div className="blur" />
-                <div className="video-background"></div>
                 <Content>
                     <Title>MenuTube</Title>
                     <SubTitle>

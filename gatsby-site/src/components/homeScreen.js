@@ -25,7 +25,7 @@ const Title = styled.div`
     )};
     text-align: center;
 
-    .bold-text {
+    span.typed-text {
         ${FontStyle(
             props => props.theme.colors.white,
             props => props.theme.fontsize.secondHeader,
@@ -34,22 +34,37 @@ const Title = styled.div`
         background-color: ${props => props.theme.colors.red};
     }
 
-    .bold-text::before {
-        animation: animate infinite 10s;
-        content: 'podcasts';
+    span.cursor {
+        display: inline-block;
+        width: .2rem;
+        margin-right: .5rem;
+        animation: blink 1s infinite;
+        background-color: ${props => props.theme.colors.black};
     }
 
-    @keyframes animate {
-        20% {
-            content: 'podcasts';
+    span.cursor.typing {
+        animation: none;
+    }
+
+    @keyframes blink {
+        0% {
+            background-color: ${props => props.theme.colors.black};
+        }
+
+        49% {
+            background-color: ${props => props.theme.colors.black};
         }
 
         50% {
-            content: 'audiobooks';
+            background-color: transparent;
+        }
+
+        99% {
+            background-color: transparent;
         }
 
         100% {
-            content: 'musics';
+            background-color: ${props => props.theme.colors.black};
         }
     }
 `;
@@ -74,19 +89,78 @@ const Play = styled.div`
     background-size: contain;
 `;
 
-const Home = () => (
-    <Background id="home">
-        <Content>
-            <Title>
-                Do you use YouTube for listening{' '}
-                <span className="bold-text"></span>?
-            </Title>
-            <SubTitle>
-                * or anything else that doesn’t require to focus on video
-            </SubTitle>
-            <Play />
-        </Content>
-    </Background>
-);
+class Home extends React.Component {
+    componentDidMount() {
+        const typedTextSpan = document.querySelector('.typed-text');
+        const cursorSpan = document.querySelector('.cursor');
+
+        const textArray = ['podcasts', 'audiobooks', 'musics'];
+        const typingDelay = 200;
+        const erasingDelay = 100;
+        const newTextDelay = 1500; // Delay between current and next text
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].length) {
+                if (!cursorSpan.classList.contains('typing')) {
+                    cursorSpan.classList.add('typing');
+                }
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(
+                    charIndex
+                );
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove('typing');
+                setTimeout(erase, newTextDelay);
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains('typing')) {
+                    cursorSpan.classList.add('typing');
+                }
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(
+                    0,
+                    charIndex - 1
+                );
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove('typing');
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) {
+                    textArrayIndex = 0;
+                }
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        if (textArray.length) {
+            setTimeout(type, newTextDelay + 250);
+        }
+    }
+
+    render() {
+        return (
+            <Background id="home">
+                <Content>
+                    <Title>
+                        Do you use YouTube for listening{' '}
+                        <span className="typed-text" />
+                        <span className="cursor">&nbsp;</span>?
+                    </Title>
+                    <SubTitle>
+                        * or anything else that doesn’t require to focus on
+                        video
+                    </SubTitle>
+                    <Play />
+                </Content>
+            </Background>
+        );
+    }
+}
 
 export default Home;
