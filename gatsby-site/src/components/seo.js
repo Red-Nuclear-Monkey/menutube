@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
                     content: metaDescription
                 }
             ].concat(meta)}
-        ></Helmet>
+        >
+            <link rel="stylesheet" href="https://cdn.plyr.io/3.5.10/plyr.css" />
+        </Helmet>
     );
 }
 

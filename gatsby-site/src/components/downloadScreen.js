@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontStyle from './fontStyle';
+import Plyr from 'plyr';
 
 const Background = styled.div`
     height: 100vh;
@@ -32,6 +33,11 @@ const Background = styled.div`
         width: 100%;
         height: 100%;
         pointer-events: none;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
     }
 `;
 
@@ -109,32 +115,55 @@ const DownloadButton = styled.button`
     }
 `;
 
-const Download = () => (
-    <Background id="download">
-        <div className="blur" />
-        <div className="video-background">
-            <div className="video-foreground">
-                <iframe
-                    title="video"
-                    src="https://www.youtube.com/embed/oG7Tj5P5F14?controls=0&showinfo=0&rel=0&autoplay=1&mute=1&loop=1&playlist=oG7Tj5P5F14"
-                    frameBorder="0"
-                    allowFullScreen
-                />
-            </div>
-        </div>
-        <Content>
-            <Title>MenuTube</Title>
-            <SubTitle>
-                is totally <span className="bold-text">free</span>!
-            </SubTitle>
-            <Sentence>
-                So what are you waiting to put an entire full functional YouTube
-                website into your macOS’s menu bar?
-            </Sentence>
-            <Release>Get the last release</Release>
-            <DownloadButton>DOWNLOAD</DownloadButton>
-        </Content>
-    </Background>
-);
+class Download extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount() {
+        if (typeof window !== 'undefined') {
+            new Plyr('#player', {
+                autoplay: true,
+                ratio: '16:9',
+                youtube: {
+                    controls: 0,
+                    iv_load_policy: 3,
+                    modestbranding: 1,
+                    showinfo: 0,
+                    loop: 1,
+                    playlist: 'oG7Tj5P5F14'
+                },
+                controls: false
+            });
+        }
+    }
+    render() {
+        return (
+            <Background id="download">
+                <div className="container">
+                    <div
+                        id="player"
+                        data-plyr-provider="youtube"
+                        data-plyr-embed-id="oG7Tj5P5F14"
+                    />
+                </div>
+                <div className="blur" />
+                <div className="video-background"></div>
+                <Content>
+                    <Title>MenuTube</Title>
+                    <SubTitle>
+                        is totally <span className="bold-text">free</span>!
+                    </SubTitle>
+                    <Sentence>
+                        So what are you waiting to put an entire full functional
+                        YouTube website into your macOS’s menu bar?
+                    </Sentence>
+                    <Release>Get the last release</Release>
+                    <DownloadButton>DOWNLOAD</DownloadButton>
+                </Content>
+            </Background>
+        );
+    }
+}
 
 export default Download;
