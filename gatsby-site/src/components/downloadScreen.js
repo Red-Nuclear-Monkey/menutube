@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontStyle from './fontStyle';
-import Plyr from 'plyr';
+// import Plyr from 'plyr';
 
 const Background = styled.div`
     height: 100vh;
@@ -122,6 +122,7 @@ class Download extends React.Component {
 
     componentDidMount() {
         if (typeof window !== 'undefined') {
+            var Plyr = require('plyr');
             new Plyr('#player', {
                 autoplay: true,
                 ratio: '16:9',
