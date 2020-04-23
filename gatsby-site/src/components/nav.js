@@ -22,7 +22,7 @@ const BlockContainer = styled.div`
         background: transparent;
         cursor: pointer;
         opacity: 1;
-        transition: background 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
 
         .active {
             border-bottom: solid 2px red;
