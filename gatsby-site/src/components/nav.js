@@ -129,7 +129,7 @@ class Nav extends React.Component {
                         GITHUB
                     </Link>
                     <Link
-                        activeClass="active-support"
+                        activeClass="active"
                         to="support"
                         spy={true}
                         smooth={true}
