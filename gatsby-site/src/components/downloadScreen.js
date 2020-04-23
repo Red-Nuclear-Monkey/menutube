@@ -113,8 +113,9 @@ class Download extends React.Component {
             const Plyr = require('plyr');
             const player = new Plyr('#player', {
                 loop: { active: true },
-                vimeo: { muted:true, autoplay: true },
-                ratio: '16:9',
+                vimeo: { muted: true, autoplay: true },
+                volume: 0,
+                storage: { enabled: false },
                 controls: false
             });
             player.on('play', () => {
