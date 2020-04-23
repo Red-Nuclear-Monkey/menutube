@@ -17,7 +17,6 @@ const Content = styled.div`
 `;
 
 const Title = styled.div`
-    width: 60%;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.secondHeader,
@@ -94,7 +93,7 @@ class Home extends React.Component {
         const typedTextSpan = document.querySelector('.typed-text');
         const cursorSpan = document.querySelector('.cursor');
 
-        const textArray = ['podcasts', 'audiobooks', 'musics'];
+        const textArray = ['podcasts', 'audiobooks', 'music'];
         const typingDelay = 200;
         const erasingDelay = 100;
         const newTextDelay = 1500; // Delay between current and next text
@@ -148,8 +147,8 @@ class Home extends React.Component {
             <Background id="home">
                 <Content>
                     <Title>
-                        Do you use YouTube for listening{' '}
-                        <span className="typed-text" />
+                        Do you use YouTube for <br />
+                        listening <span className="typed-text" />
                         <span className="cursor">&nbsp;</span>?
                     </Title>
                     <SubTitle>

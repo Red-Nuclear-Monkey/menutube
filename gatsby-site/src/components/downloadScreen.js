@@ -4,44 +4,37 @@ import FontStyle from './fontStyle';
 // import Plyr from 'plyr';
 
 const Background = styled.div`
+    position: relative;
     height: 100vh;
 
     .blur {
         position: absolute;
         z-index: 1;
+        top: 0;
         width: 100%;
         height: 100%;
         background-color: ${props => props.theme.colors.redOrange};
         opacity: .85;
     }
 
-    .video-background {
-        position: fixed;
-        z-index: -99;
+    #video-background {
+        position: relative;
         top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: #000;
-    }
-
-    .video-foreground,
-    .video-background iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        pointer-events: none;
+        opacity: 0;
+        transition: opacity 1500ms ease-in;
+        will-change: opacity;
     }
 
-    .container {
-        width: 100%;
-        height: 100%;
+    #video-background.visible {
+        opacity: 1;
     }
 `;
 
 const Content = styled.div`
+    position: absolute;
+    top: 0;
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -118,12 +111,17 @@ const DownloadButton = styled.button`
 class Download extends React.Component {
     componentDidMount() {
         if (typeof window !== 'undefined') {
-            var Plyr = require('plyr');
-            new Plyr('#player', {
+            const Plyr = require('plyr');
+            const player = new Plyr('#player', {
                 autoplay: true,
+                muted: true,
                 loop: { active: true },
                 ratio: '16:9',
                 controls: false
+            });
+            player.on('play', () => {
+                const video = document.querySelector('#video-background');
+                video.classList.add('visible');
             });
         }
     }
@@ -132,7 +130,7 @@ class Download extends React.Component {
         return (
             <Background id="download">
                 <div className="blur" />
-                <div className="video-background">
+                <div id="video-background">
                     <div
                         id="player"
                         data-plyr-provider="vimeo"
