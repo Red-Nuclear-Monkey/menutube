@@ -13,8 +13,7 @@ const Background = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: ${props => props.theme.colors.redOrange};
-        opacity: .85;
+        background: rgb(211, 92, 80, .85);
     }
 
     #video-background {
