@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import screenshots from '../images/screenshots.png';
 import FontStyle from './fontStyle';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Background = styled.div`
     height: 100vh;
@@ -76,18 +78,26 @@ const Screenshots = styled.div`
     background-size: contain;
 `;
 
-const Product = () => (
-    <Background id="product">
-        <BlockContainer>
-            <Content>
-                <SubTitle>Use</SubTitle>
-                <Title>MenuTube</Title>
-                <Sentence>YouTube into your macOS menu bar</Sentence>
-                <DownloadButton>GET THE LAST RELEASE</DownloadButton>
-            </Content>
-            <Screenshots />
-        </BlockContainer>
-    </Background>
-);
+class Product extends React.Component {
+    componentDidMount() {
+        Aos.init();
+    }
+
+    render() {
+        return (
+            <Background id="product">
+                <BlockContainer data-aos="zoom-in" data-aos-duration="1500">
+                    <Content>
+                        <SubTitle>Use</SubTitle>
+                        <Title>MenuTube</Title>
+                        <Sentence>YouTube into your macOS menu bar</Sentence>
+                        <DownloadButton>GET THE LAST RELEASE</DownloadButton>
+                    </Content>
+                    <Screenshots />
+                </BlockContainer>
+            </Background>
+        );
+    }
+}
 
 export default Product;
