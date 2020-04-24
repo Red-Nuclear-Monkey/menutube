@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontStyle from './fontStyle';
-// import Plyr from 'plyr';
 
 const Background = styled.div`
     position: relative;
@@ -113,8 +112,8 @@ class Download extends React.Component {
             const Plyr = require('plyr');
             const player = new Plyr('#player', {
                 loop: { active: true },
-                vimeo: { muted: true, autoplay: true },
-                volume: 0,
+                muted: true,
+                autoplay: true,
                 storage: { enabled: false },
                 controls: false
             });
