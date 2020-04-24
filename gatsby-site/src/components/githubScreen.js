@@ -17,10 +17,6 @@ const BlockContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    a.anchor {
-        text-decoration: none;
-    }
 `;
 
 const ColumnTitleContent = styled.div`
@@ -51,7 +47,7 @@ const Text = styled.div`
     text-align: justify;
 `;
 
-const ColumnImageOneText = styled.div`
+const ColumnImageOneText = styled.a`
     display: flex;
     width: 13rem;
     height: 16rem;
@@ -64,6 +60,7 @@ const ColumnImageOneText = styled.div`
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
     box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
     cursor: pointer;
+    text-decoration: none;
 
     :hover {
         transform: scale(1.1);
@@ -86,7 +83,7 @@ const ImageText = styled.div`
     )};
 `;
 
-const ColumnImageTwo = styled.div`
+const ColumnImageTwo = styled.a`
     display: flex;
     width: 15rem;
     height: 7rem;
@@ -99,6 +96,7 @@ const ColumnImageTwo = styled.div`
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
     box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
     cursor: pointer;
+    text-decoration: none;
 
     :hover {
         transform: scale(1.1);
@@ -133,31 +131,21 @@ class Github extends React.Component {
                             ex ea commodo consequat.
                         </Text>
                     </ColumnTitleContent>
-                    <a
-                        className="anchor"
+                    <ColumnImageOneText
                         href="https://github.com/edanchenkov/MenuTube"
                         target="_blank"
+                        rel="noopener"
                     >
-                        <ColumnImageOneText
-                            data-aos="zoom-in"
-                            data-aos-duration="2000"
-                        >
-                            <GitHub />
-                            <ImageText>OLD REPO</ImageText>
-                        </ColumnImageOneText>
-                    </a>
-                    <a
-                        className="anchor"
+                        <GitHub />
+                        <ImageText>OLD REPO</ImageText>
+                    </ColumnImageOneText>
+                    <ColumnImageTwo
                         href="https://rednuclearmonkey.com"
                         target="_blank"
+                        rel="noopener"
                     >
-                        <ColumnImageTwo
-                            data-aos="zoom-in"
-                            data-aos-duration="2000"
-                        >
-                            <RedNuclearMonkey />
-                        </ColumnImageTwo>
-                    </a>
+                        <RedNuclearMonkey />
+                    </ColumnImageTwo>
                 </BlockContainer>
             </Background>
         );
