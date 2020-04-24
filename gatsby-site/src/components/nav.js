@@ -24,11 +24,6 @@ const BlockContainer = styled.div`
         opacity: 1;
         transition: all 400ms ease-in-out;
 
-        .active {
-            border-bottom: solid 2px red;
-            color: ${props => props.theme.colors.red};
-        }
-
         a {
             margin: 0 3rem;
         }
@@ -42,6 +37,12 @@ const BlockContainer = styled.div`
         background: rgb(0, 0, 0, .95);
         color: white;
     }
+
+    .nav-color.active,
+    .nav-color.github-active {
+        border-bottom: solid 2px red;
+        color: ${props => props.theme.colors.red};
+    }
 `;
 
 const Logo = styled.div`
@@ -54,9 +55,9 @@ const Logo = styled.div`
 
 class Nav extends React.Component {
     listenScrollEvent = () => {
-        const heightPourcentage = window.document.body.scrollHeight * 0.02;
+        const heightPercentage = window.document.body.scrollHeight * 0.02;
         const nav = document.querySelector('.nav-bar');
-        if (window.scrollY > heightPourcentage) {
+        if (window.scrollY > heightPercentage) {
             nav.classList.add('scrolling');
         } else if (
             window.scrollY <= 100 &&
@@ -84,6 +85,7 @@ class Nav extends React.Component {
                         <Logo />
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="home"
                         spy={true}
@@ -93,6 +95,7 @@ class Nav extends React.Component {
                         HOME
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="product"
                         spy={true}
@@ -102,6 +105,7 @@ class Nav extends React.Component {
                         PRODUCT
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="features"
                         spy={true}
@@ -111,6 +115,7 @@ class Nav extends React.Component {
                         FEATURES
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="download"
                         spy={true}
@@ -120,6 +125,7 @@ class Nav extends React.Component {
                         DOWNLOAD
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="github"
                         spy={true}
@@ -129,6 +135,7 @@ class Nav extends React.Component {
                         GITHUB
                     </Link>
                     <Link
+                        className="nav-color"
                         activeClass="active"
                         to="support"
                         spy={true}

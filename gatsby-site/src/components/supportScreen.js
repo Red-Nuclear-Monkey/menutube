@@ -9,7 +9,7 @@ const Background = styled.div`
 
 const Content = styled.div`
     display: flex;
-    height: 60vh;
+    height: 100vh;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -67,8 +67,35 @@ const Donate = styled.button`
     }
 `;
 
+const BRTop = styled.div`
+    position: relative;
+    top: 7rem;
+    width: 90%;
+    height: 1px;
+    border: 0;
+    margin: 0 auto;
+    background-image: -webkit-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -moz-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -ms-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -o-linear-gradient(left, #fff, #8c8b8b, #fff);
+`;
+
+const BRBottom = styled.div`
+    position: relative;
+    top: -7rem;
+    width: 90%;
+    height: 1px;
+    border: 0;
+    margin: 0 auto;
+    background-image: -webkit-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -moz-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -ms-linear-gradient(left, #fff, #8c8b8b, #fff);
+    background-image: -o-linear-gradient(left, #fff, #8c8b8b, #fff);
+`;
+
 const Support = () => (
     <Background id="support">
+        <BRTop />
         <Content>
             <Title>Thanks for your support!</Title>
             <SubTitle>
@@ -78,6 +105,7 @@ const Support = () => (
             <Sentence>Your donations help developers.</Sentence>
             <Donate>DONATE</Donate>
         </Content>
+        <BRBottom />
     </Background>
 );
 

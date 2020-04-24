@@ -7,7 +7,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const Background = styled.div`
-    max-height: 100vh;
+    height: 50vh;
     background: ${props => props.theme.colors.white};
 `;
 
@@ -17,6 +17,10 @@ const BlockContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    a.anchor {
+        text-decoration: none;
+    }
 `;
 
 const ColumnTitleContent = styled.div`
@@ -129,13 +133,31 @@ class Github extends React.Component {
                             ex ea commodo consequat.
                         </Text>
                     </ColumnTitleContent>
-                    <ColumnImageOneText>
-                        <GitHub />
-                        <ImageText>OLD REPO</ImageText>
-                    </ColumnImageOneText>
-                    <ColumnImageTwo>
-                        <RedNuclearMonkey />
-                    </ColumnImageTwo>
+                    <a
+                        className="anchor"
+                        href="https://github.com/edanchenkov/MenuTube"
+                        target="_blank"
+                    >
+                        <ColumnImageOneText
+                            data-aos="zoom-in"
+                            data-aos-duration="2000"
+                        >
+                            <GitHub />
+                            <ImageText>OLD REPO</ImageText>
+                        </ColumnImageOneText>
+                    </a>
+                    <a
+                        className="anchor"
+                        href="https://rednuclearmonkey.com"
+                        target="_blank"
+                    >
+                        <ColumnImageTwo
+                            data-aos="zoom-in"
+                            data-aos-duration="2000"
+                        >
+                            <RedNuclearMonkey />
+                        </ColumnImageTwo>
+                    </a>
                 </BlockContainer>
             </Background>
         );
