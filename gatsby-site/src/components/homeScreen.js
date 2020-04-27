@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
 import FontStyle from './fontStyle';
+import { size } from '../utils/breakpoints';
 
 const Background = styled.div`
     height: 100vh;
@@ -23,6 +24,10 @@ const Title = styled.div`
         300
     )};
     text-align: center;
+
+    @media (max-width: ${size.mobilePortait}) {
+        font-size: 10px;
+    }
 
     span.typed-text {
         ${FontStyle(
