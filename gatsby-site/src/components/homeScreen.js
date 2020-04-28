@@ -25,8 +25,8 @@ const Title = styled.div`
     )};
     text-align: center;
 
-    @media (max-width: ${size.mobilePortait}) {
-        font-size: 10px;
+    @media (max-width: ${size.laptopPortrait}) {
+        font-size: 4rem;
     }
 
     span.typed-text {
@@ -36,6 +36,10 @@ const Title = styled.div`
             400
         )};
         background-color: ${props => props.theme.colors.red};
+
+        @media (max-width: ${size.laptopPortrait}) {
+            font-size: 4rem;
+        }
     }
 
     span.cursor {

@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import menutube from '../images/menutube-play.png';
 import { Link } from 'react-scroll';
+import { size } from '../utils/breakpoints';
+import FontStyle from './fontStyle';
 
 const BlockContainer = styled.div`
     position: fixed;
     z-index: 3;
-    display: flex;
     width: 100%;
     height: 5rem;
-    flex-direction: row;
-    justify-content: center;
-    font-size: ${props => props.theme.fontsize.navTitles};
 
     .nav-bar {
         display: flex;
@@ -24,8 +22,24 @@ const BlockContainer = styled.div`
         opacity: 1;
         transition: all 400ms ease-in-out;
 
+        @media (max-width: ${size.tabletPortrait}) {
+            transition: none;
+        }
+
         a {
             margin: 0 3rem;
+
+            @media (max-width: ${size.laptopPortrait}) {
+                margin: 0 1rem;
+            }
+
+            @media (min-width: ${size.laptopPortrait}) and (max-width: ${size.laptopLandscape}) {
+                margin: 0 2rem;
+            }
+
+            @media (max-width: ${size.tabletPortrait}) {
+                margin: 1.5rem 0;
+            }
         }
 
         a:hover {
@@ -36,12 +50,87 @@ const BlockContainer = styled.div`
     .nav-bar.scrolling {
         background: rgb(0, 0, 0, .95);
         color: white;
+
+        @media (max-width: ${size.tabletPortrait}) {
+            color: black;
+        }
+
+        .logo-title {
+            color: white;
+        }
     }
 
     .nav-color.active,
     .nav-color.github-active {
         border-bottom: solid 2px red;
         color: ${props => props.theme.colors.red};
+    }
+
+    .nav-titles {
+        font-size: ${props => props.theme.fontsize.navTitles};
+
+        @media (max-width: ${size.tabletPortrait}) {
+            display: none;
+        }
+    }
+
+    .nav-bar.open-menu {
+        background-color: ${props => props.theme.colors.white};
+
+        .nav-titles {
+            display: flex;
+            height: 100vh;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 5rem;
+            font-size: ${props => props.theme.fontsize.fourthHeader};
+        }
+
+        .logo-title {
+            color: black;
+        }
+    }
+`;
+
+const NavContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: ${size.tabletPortrait}) {
+        width: 100%;
+        flex-direction: column;
+    }
+`;
+
+const MenuLogoContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (max-width: ${size.tabletPortrait}) {
+        width: 95%;
+    }
+`;
+
+const LogoContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+const LogoTitle = styled.div`
+    display: none;
+    align-items: center;
+    ${FontStyle(
+        props => props.theme.colors.black,
+        props => props.theme.fontsize.fourthHeader,
+        700
+    )};
+
+    @media (max-width: ${size.tabletPortrait}) {
+        display: flex;
     }
 `;
 
@@ -53,17 +142,60 @@ const Logo = styled.div`
     background-size: contain;
 `;
 
+const MenuLogo = styled.div`
+    display: none;
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @media (max-width: ${size.tabletPortrait}) {
+        display: flex;
+
+        img {
+            margin: 0;
+        }
+    }
+`;
+
 class Nav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.el = React.createRef();
+        this.state = {
+            menuButton: 'menu-black.svg'
+        };
+    }
+
+    onMenuClick() {
+        const el = this.el.current;
+
+        this.setState(
+            {
+                menuButton: el.classList.contains('open-menu')
+                    ? 'menu-black.svg'
+                    : 'close-menu.svg'
+            },
+            () => {
+                this.el.current.classList.toggle('open-menu');
+            }
+        );
+    }
+
     listenScrollEvent = () => {
         const heightPercentage = window.document.body.scrollHeight * 0.02;
         const nav = document.querySelector('.nav-bar');
         if (window.scrollY > heightPercentage) {
             nav.classList.add('scrolling');
+            this.setState({
+                menuButton: 'menu-white.svg'
+            });
         } else if (
             window.scrollY <= 100 &&
             nav.classList.contains('scrolling')
         ) {
             nav.classList.remove('scrolling');
+            this.setState({
+                menuButton: 'menu-black.svg'
+            });
         }
     };
 
@@ -74,76 +206,91 @@ class Nav extends React.Component {
     render() {
         return (
             <BlockContainer>
-                <div className="nav-bar">
-                    <Link
-                        activeClass="logo"
-                        to="home"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        <Logo />
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="home"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        HOME
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="product"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        PRODUCT
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="features"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        FEATURES
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="download"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        DOWNLOAD
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="github"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        GITHUB
-                    </Link>
-                    <Link
-                        className="nav-color"
-                        activeClass="active"
-                        to="support"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                    >
-                        SUPPORT
-                    </Link>
+                <div {...this.props} className="nav-bar" ref={this.el}>
+                    <NavContainer>
+                        <MenuLogoContainer>
+                            <LogoContainer>
+                                <LogoTitle className="logo-title">
+                                    MenuTube
+                                </LogoTitle>
+                                <Logo />
+                            </LogoContainer>
+                            <MenuLogo onClick={this.onMenuClick.bind(this)}>
+                                <img
+                                    src={`${this.state.menuButton}`}
+                                    alt="menu-button"
+                                />
+                            </MenuLogo>
+                        </MenuLogoContainer>
+                        <div className="nav-titles">
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="home"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                HOME
+                            </Link>
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="product"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                PRODUCT
+                            </Link>
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="features"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                FEATURES
+                            </Link>
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="download"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                DOWNLOAD
+                            </Link>
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="github"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                GITHUB
+                            </Link>
+                            <Link
+                                className="nav-color"
+                                activeClass="active"
+                                to="support"
+                                spy={true}
+                                smooth={true}
+                                duration={500}
+                                onClick={this.onMenuClick.bind(this)}
+                            >
+                                SUPPORT
+                            </Link>
+                        </div>
+                    </NavContainer>
                 </div>
             </BlockContainer>
         );

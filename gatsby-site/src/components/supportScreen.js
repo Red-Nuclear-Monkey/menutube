@@ -24,7 +24,9 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
+    width: 80%;
     margin-top: ${props => props.theme.marginTop.smallSpace};
+    text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.fourthHeader,

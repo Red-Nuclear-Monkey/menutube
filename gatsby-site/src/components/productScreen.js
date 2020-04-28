@@ -4,6 +4,7 @@ import screenshots from '../images/screenshots.png';
 import FontStyle from './fontStyle';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { size } from '../utils/breakpoints';
 
 const Background = styled.div`
     height: 100vh;
@@ -16,12 +17,21 @@ const BlockContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: ${size.laptopPortrait}) {
+        flex-direction: column;
+    }
 `;
 
 const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin: 0 2rem;
+
+    @media (max-width: ${size.laptopPortrait}) {
+        align-items: center;
+        margin: 3rem 0;
+    }
 `;
 
 const Title = styled.div`
@@ -30,6 +40,10 @@ const Title = styled.div`
         props => props.theme.fontsize.mainHeader,
         700
     )};
+
+    @media (max-width: ${size.laptopPortrait}) {
+        font-size: 7rem;
+    }
 `;
 
 const SubTitle = styled.div`
@@ -38,6 +52,10 @@ const SubTitle = styled.div`
         props => props.theme.fontsize.secondHeader,
         300
     )};
+
+    @media (max-width: ${size.laptopPortrait}) {
+        font-size: 4rem;
+    }
 `;
 
 const Sentence = styled.div`
@@ -76,6 +94,11 @@ const Screenshots = styled.div`
     background-image: url(${screenshots});
     background-repeat: no-repeat;
     background-size: contain;
+
+    @media (max-width: ${size.laptopPortrait}) {
+        width: 35rem;
+        height: 35rem;
+    }
 `;
 
 class Product extends React.Component {

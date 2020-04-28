@@ -4,5 +4,6 @@ export const size = {
     tabletPortrait: '768px',
     tabletLandscape: '992px',
     laptopPortrait: '1000px',
-    laptopLandscape: '1200px'
+    laptopLandscape: '1200px',
+    mediumScreen: '1500px'
 };

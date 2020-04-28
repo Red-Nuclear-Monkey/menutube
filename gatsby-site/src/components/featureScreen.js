@@ -5,6 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import gatsbyastro from '../images/gatsby-astronaut.png';
+import { size } from '../utils/breakpoints';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -16,13 +17,13 @@ const BlockContainer = styled.div`
     height: 100vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 `;
 
 const RowTitle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10rem;
 `;
 
 const Title = styled.div`
@@ -45,7 +46,11 @@ const Carousel = styled.div`
     margin-top: 8rem;
 
     .slick-slider {
-        width: 100rem;
+        width: 90rem;
+
+        @media (min-width: ${size.laptopLandscape}) and (max-width: ${size.mediumScreen}) {
+            width: 70rem;
+        }
     }
 
     .slick-next {
@@ -84,6 +89,19 @@ const Carousel = styled.div`
     }
 `;
 
+const RowFeatures = styled.div`
+    display: none;
+
+    @media (max-width: ${size.laptopLandscape}) {
+        display: none;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+        margin-top: 3rem;
+    }
+`;
+
 const Item = styled.div`
     color: black;
     text-align: center;
@@ -108,6 +126,11 @@ const GatsbyAstro = styled.div`
     background-image: url(${gatsbyastro});
     background-repeat: no-repeat;
     background-size: contain;
+
+    @media (max-width: ${size.laptopPortrait}) {
+        width: 10rem;
+        height: 10rem;
+    }
 `;
 
 const settings = {
@@ -115,7 +138,25 @@ const settings = {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3
+    slidesToScroll: 3,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                mobileFirst: true,
+                slidesToScroll: 2,
+                adaptiveHeight: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 };
 
 const Feature = () => (
@@ -154,6 +195,34 @@ const Feature = () => (
                     </Item>
                 </Slider>
             </Carousel>
+            <RowFeatures>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 1</TextCarousel>
+                </Item>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 2</TextCarousel>
+                </Item>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 3</TextCarousel>
+                </Item>
+            </RowFeatures>
+            <RowFeatures>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 1</TextCarousel>
+                </Item>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 2</TextCarousel>
+                </Item>
+                <Item>
+                    <GatsbyAstro />
+                    <TextCarousel>Item 3</TextCarousel>
+                </Item>
+            </RowFeatures>
         </BlockContainer>
     </Background>
 );

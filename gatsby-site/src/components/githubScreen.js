@@ -5,10 +5,15 @@ import githubLogo from '../images/github.png';
 import FontStyle from './fontStyle';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { size } from '../utils/breakpoints';
 
 const Background = styled.div`
     height: 50vh;
     background: ${props => props.theme.colors.white};
+
+    @media (max-width: ${size.laptopPortrait}) {
+        height: 100vh;
+    }
 `;
 
 const BlockContainer = styled.div`
@@ -17,6 +22,11 @@ const BlockContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: ${size.laptopPortrait}) {
+        height: 100vh;
+        flex-direction: column;
+    }
 `;
 
 const ColumnTitleContent = styled.div`
@@ -47,6 +57,13 @@ const Text = styled.div`
     text-align: justify;
 `;
 
+const BoxContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+`;
+
 const ColumnImageOneText = styled.a`
     display: flex;
     width: 13rem;
@@ -64,6 +81,10 @@ const ColumnImageOneText = styled.a`
 
     :hover {
         transform: scale(1.1);
+    }
+
+    @media (max-width: ${size.laptopPortrait}) {
+        margin-left: 0;
     }
 `;
 
@@ -131,21 +152,23 @@ class Github extends React.Component {
                             ex ea commodo consequat.
                         </Text>
                     </ColumnTitleContent>
-                    <ColumnImageOneText
-                        href="https://github.com/edanchenkov/MenuTube"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <GitHub />
-                        <ImageText>OLD REPO</ImageText>
-                    </ColumnImageOneText>
-                    <ColumnImageTwo
-                        href="https://rednuclearmonkey.com"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <RedNuclearMonkey />
-                    </ColumnImageTwo>
+                    <BoxContainer>
+                        <ColumnImageOneText
+                            href="https://github.com/edanchenkov/MenuTube"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <GitHub />
+                            <ImageText>OLD REPO</ImageText>
+                        </ColumnImageOneText>
+                        <ColumnImageTwo
+                            href="https://rednuclearmonkey.com"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <RedNuclearMonkey />
+                        </ColumnImageTwo>
+                    </BoxContainer>
                 </BlockContainer>
             </Background>
         );
