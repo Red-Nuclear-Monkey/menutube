@@ -166,18 +166,23 @@ class Nav extends React.Component {
     }
 
     onMenuClick() {
-        const el = this.el.current;
+        if (window.innerWidth <= parseInt(size.tabletPortrait)) {
+            const el = this.el.current;
+            const nav = document.querySelector('.nav-bar');
 
-        this.setState(
-            {
-                menuButton: el.classList.contains('open-menu')
-                    ? 'menu-black.svg'
-                    : 'close-menu.svg'
-            },
-            () => {
-                this.el.current.classList.toggle('open-menu');
-            }
-        );
+            this.setState(
+                {
+                    menuButton: el.classList.contains('open-menu')
+                        ? nav.classList.contains('scrolling')
+                            ? 'menu-white.svg'
+                            : 'menu-black.svg'
+                        : 'close-menu.svg'
+                },
+                () => {
+                    this.el.current.classList.toggle('open-menu');
+                }
+            );
+        }
     }
 
     listenScrollEvent = () => {

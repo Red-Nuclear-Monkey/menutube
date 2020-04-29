@@ -17,7 +17,7 @@ const BlockContainer = styled.div`
     height: 100vh;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 `;
 
 const RowTitle = styled.div`
@@ -43,14 +43,12 @@ const DecorationTitle = styled.div`
 `;
 
 const Carousel = styled.div`
-    margin-top: 8rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 
     .slick-slider {
-        width: 90rem;
-
-        @media (min-width: ${size.laptopLandscape}) and (max-width: ${size.mediumScreen}) {
-            width: 70rem;
-        }
+        width: 90%;
     }
 
     .slick-next {
@@ -85,7 +83,7 @@ const Carousel = styled.div`
     }
 
     .slick-list {
-        margin: 0 10rem;
+        margin: 0 5rem;
     }
 `;
 
