@@ -4,19 +4,19 @@ exports.init = function (wv) {
         var accelerator = data.accelerator;
 
         switch (accelerator) {
-            case ('Cmd+Shift+Left'):
+            case ('Cmd+Ctrl+Left'):
                 wv.send('changeTime', -5);
                 break;
-            case ('Cmd+Shift+Right'):
+            case ('Cmd+Ctrl+Right'):
                 wv.send('changeTime', 5);
                 break;
-            case ('Cmd+Shift+l'):
+            case ('Cmd+Ctrl+l'):
                 wv.send('changeTime', 15);
                 break;
-            case ('Cmd+Shift+j'):
+            case ('Cmd+Ctrl+j'):
                 wv.send('changeTime', -15);
                 break;
-            case ('Cmd+Shift+y'):
+            case ('Cmd+Ctrl+y'):
                 ipcRenderer.send('toggleWindow');
                 break;
         }

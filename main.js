@@ -11,11 +11,11 @@ var mb = menubar(
 );
 
 var accelerators = [
-    'Cmd+Shift+Left',
-    'Cmd+Shift+Right',
-    'Cmd+Shift+j',
-    'Cmd+Shift+l',
-    'Cmd+Shift+y'
+    'Cmd+Ctrl+Left',
+    'Cmd+Ctrl+Right',
+    'Cmd+Ctrl+j',
+    'Cmd+Ctrl+l',
+    'Cmd+Ctrl+y'
 ];
 
 var defaultMenu = [
