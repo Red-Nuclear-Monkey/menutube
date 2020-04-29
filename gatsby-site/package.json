@@ -3,24 +3,40 @@
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Red Nuclear Monkey",
   "dependencies": {
+    "aos": "^2.3.4",
+    "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.20.12",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-manifest": "^2.3.3",
     "gatsby-plugin-offline": "^3.1.2",
     "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-plugin-sharp": "^2.5.3",
+    "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-typography": "^2.4.1",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-sharp": "^2.4.3",
+    "plyr": "^3.5.10",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-scroll": "^1.7.16",
+    "react-slick": "^0.25.2",
+    "react-typography": "^0.16.19",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.1.0",
+    "typography": "^0.16.19"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "stylelint": "^13.3.2",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0"
   },
   "keywords": [
     "gatsby"
@@ -34,7 +50,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && echo 'menutube.rednuclearmonkey.com' > ./public/CNAME && gh-pages -d public",
+    "lint:css": "stylelint './src/**/*.js'",
+    "lint:fix:css": "stylelint --fix './src/**/*.js'"
   },
   "repository": {
     "type": "git",
