@@ -120,6 +120,10 @@ const LogoTitle = styled.div`
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         display: flex;
     }
+
+    @media (min-width: ${sizeMediaQueries.mobileLandscape}) and (max-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.thirdHeader};
+    }
 `;
 
 const Logo = styled.div`
@@ -128,6 +132,11 @@ const Logo = styled.div`
     background-image: url(${menutube});
     background-repeat: no-repeat;
     background-size: contain;
+
+    @media (min-width: ${sizeMediaQueries.mobileLandscape}) and (max-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 8rem;
+        height: 8rem;
+    }
 `;
 
 const MenuLogo = styled.div`
@@ -141,6 +150,11 @@ const MenuLogo = styled.div`
         img {
             margin: 0;
         }
+    }
+
+    @media (min-width: ${sizeMediaQueries.mobileLandscape}) and (max-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 4.5rem;
+        height: 4.5rem;
     }
 `;
 
@@ -157,6 +171,7 @@ class Nav extends React.Component {
         if (window.innerWidth <= parseInt(sizeMediaQueries.tabletLandscape)) {
             const el = this.el.current;
             const nav = document.querySelector('.nav-bar');
+            const body = document.querySelector('body');
 
             this.setState(
                 {
@@ -168,6 +183,11 @@ class Nav extends React.Component {
                 },
                 () => {
                     this.el.current.classList.toggle('open-menu');
+                    if (!body.classList.contains('no-scroll')) {
+                        body.classList.add('no-scroll');
+                    } else {
+                        body.classList.remove('no-scroll');
+                    }
                 }
             );
         }
