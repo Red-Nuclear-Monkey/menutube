@@ -24,7 +24,6 @@ const RowTitle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 10rem;
 `;
 
 const Title = styled.div`
