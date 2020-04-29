@@ -202,7 +202,7 @@ class Nav extends React.Component {
                 menuButton: 'menu-white.svg'
             });
         } else if (
-            window.scrollY <= 100 &&
+            window.scrollY <= heightPercentage &&
             nav.classList.contains('scrolling')
         ) {
             nav.classList.remove('scrolling');
