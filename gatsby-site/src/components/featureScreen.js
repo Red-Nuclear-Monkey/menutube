@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import gatsbyastro from '../images/gatsby-astronaut.png';
-import { size } from '../utils/breakpoints';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -69,6 +69,10 @@ const Carousel = styled.div`
         bottom: -3rem;
         color: red;
 
+        @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+            bottom: -6rem;
+        }
+
         li button::before {
             color: ${props => props.theme.colors.redOrange};
             font-size: 1rem;
@@ -84,19 +88,6 @@ const Carousel = styled.div`
 
     .slick-list {
         margin: 0 5rem;
-    }
-`;
-
-const RowFeatures = styled.div`
-    display: none;
-
-    @media (max-width: ${size.laptopLandscape}) {
-        display: none;
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 1rem;
-        margin-top: 3rem;
     }
 `;
 
@@ -124,11 +115,6 @@ const GatsbyAstro = styled.div`
     background-image: url(${gatsbyastro});
     background-repeat: no-repeat;
     background-size: contain;
-
-    @media (max-width: ${size.laptopPortrait}) {
-        width: 10rem;
-        height: 10rem;
-    }
 `;
 
 const settings = {
@@ -148,10 +134,13 @@ const settings = {
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 480,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                mobileFirst: true,
+                adaptiveHeight: true,
+                rows: 2
             }
         }
     ]
@@ -193,34 +182,6 @@ const Feature = () => (
                     </Item>
                 </Slider>
             </Carousel>
-            <RowFeatures>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 1</TextCarousel>
-                </Item>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 2</TextCarousel>
-                </Item>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 3</TextCarousel>
-                </Item>
-            </RowFeatures>
-            <RowFeatures>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 1</TextCarousel>
-                </Item>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 2</TextCarousel>
-                </Item>
-                <Item>
-                    <GatsbyAstro />
-                    <TextCarousel>Item 3</TextCarousel>
-                </Item>
-            </RowFeatures>
         </BlockContainer>
     </Background>
 );

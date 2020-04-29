@@ -2,14 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import menutube from '../images/menutube-play.png';
 import { Link } from 'react-scroll';
-import { size } from '../utils/breakpoints';
+import { sizeMediaQueries } from '../utils/responsive';
 import FontStyle from './fontStyle';
 
 const BlockContainer = styled.div`
     position: fixed;
     z-index: 3;
     width: 100%;
-    height: 5rem;
 
     .nav-bar {
         display: flex;
@@ -22,24 +21,12 @@ const BlockContainer = styled.div`
         opacity: 1;
         transition: all 400ms ease-in-out;
 
-        @media (max-width: ${size.tabletPortrait}) {
+        @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
             transition: none;
         }
 
         a {
             margin: 0 3rem;
-
-            @media (max-width: ${size.laptopPortrait}) {
-                margin: 0 1rem;
-            }
-
-            @media (min-width: ${size.laptopPortrait}) and (max-width: ${size.laptopLandscape}) {
-                margin: 0 2rem;
-            }
-
-            @media (max-width: ${size.tabletPortrait}) {
-                margin: 1.5rem 0;
-            }
         }
 
         a:hover {
@@ -51,12 +38,12 @@ const BlockContainer = styled.div`
         background: rgb(0, 0, 0, .95);
         color: white;
 
-        @media (max-width: ${size.tabletPortrait}) {
-            color: black;
+        @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
+            color: ${props => props.theme.colors.black};
         }
 
         .logo-title {
-            color: white;
+            color: ${props => props.theme.colors.white};
         }
     }
 
@@ -69,7 +56,7 @@ const BlockContainer = styled.div`
     .nav-titles {
         font-size: ${props => props.theme.fontsize.navTitles};
 
-        @media (max-width: ${size.tabletPortrait}) {
+        @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
             display: none;
         }
     }
@@ -82,7 +69,7 @@ const BlockContainer = styled.div`
             height: 100vh;
             flex-direction: column;
             align-items: center;
-            margin-top: 5rem;
+            justify-content: space-evenly;
             font-size: ${props => props.theme.fontsize.fourthHeader};
         }
 
@@ -94,11 +81,12 @@ const BlockContainer = styled.div`
 
 const NavContainer = styled.div`
     display: flex;
+    max-height: 100vh;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: ${size.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 100%;
         flex-direction: column;
     }
@@ -110,7 +98,7 @@ const MenuLogoContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: ${size.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 95%;
     }
 `;
@@ -129,7 +117,7 @@ const LogoTitle = styled.div`
         700
     )};
 
-    @media (max-width: ${size.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         display: flex;
     }
 `;
@@ -147,7 +135,7 @@ const MenuLogo = styled.div`
     width: 2.5rem;
     height: 2.5rem;
 
-    @media (max-width: ${size.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         display: flex;
 
         img {
@@ -166,7 +154,7 @@ class Nav extends React.Component {
     }
 
     onMenuClick() {
-        if (window.innerWidth <= parseInt(size.tabletPortrait)) {
+        if (window.innerWidth <= parseInt(sizeMediaQueries.tabletLandscape)) {
             const el = this.el.current;
             const nav = document.querySelector('.nav-bar');
 

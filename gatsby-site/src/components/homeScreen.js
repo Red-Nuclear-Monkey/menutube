@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
 import FontStyle from './fontStyle';
-import { size } from '../utils/breakpoints';
 
 const Background = styled.div`
     height: 100vh;
@@ -25,10 +24,6 @@ const Title = styled.div`
     )};
     text-align: center;
 
-    @media (max-width: ${size.laptopPortrait}) {
-        font-size: 4rem;
-    }
-
     span.typed-text {
         ${FontStyle(
             props => props.theme.colors.white,
@@ -36,10 +31,6 @@ const Title = styled.div`
             400
         )};
         background-color: ${props => props.theme.colors.red};
-
-        @media (max-width: ${size.laptopPortrait}) {
-            font-size: 4rem;
-        }
     }
 
     span.cursor {

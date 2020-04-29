@@ -5,13 +5,13 @@ import githubLogo from '../images/github.png';
 import FontStyle from './fontStyle';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { size } from '../utils/breakpoints';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
     height: 50vh;
     background: ${props => props.theme.colors.white};
 
-    @media (max-width: ${size.laptopPortrait}) {
+    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
         height: 100vh;
     }
 `;
@@ -23,9 +23,10 @@ const BlockContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: ${size.laptopPortrait}) {
+    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
         height: 100vh;
         flex-direction: column;
+        justify-content: space-evenly;
     }
 `;
 
@@ -34,6 +35,10 @@ const ColumnTitleContent = styled.div`
     width: 40%;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 80%;
+    }
 `;
 
 const Title = styled.div`
@@ -83,7 +88,7 @@ const ColumnImageOneText = styled.a`
         transform: scale(1.1);
     }
 
-    @media (max-width: ${size.laptopPortrait}) {
+    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
         margin-left: 0;
     }
 `;
