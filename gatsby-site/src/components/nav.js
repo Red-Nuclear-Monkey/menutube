@@ -62,10 +62,15 @@ const BlockContainer = styled.div`
 
     .nav-bar.open-menu {
         background-color: ${props => props.theme.colors.white};
+        height: 100vh;
+        
+        .nav-container{
+        height: 100%;
+        }
 
         .nav-titles {
             display: flex;
-            height: 100vh;
+            height: 100%;
             flex-direction: column;
             align-items: center;
             justify-content: space-evenly;
@@ -220,7 +225,7 @@ class Nav extends React.Component {
         return (
             <BlockContainer>
                 <div {...this.props} className="nav-bar" ref={this.el}>
-                    <NavContainer>
+                    <NavContainer className="nav-container">
                         <MenuLogoContainer>
                             <LogoContainer>
                                 <LogoTitle className="logo-title">
