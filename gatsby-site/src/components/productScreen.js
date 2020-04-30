@@ -18,7 +18,7 @@ const BlockContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         flex-direction: column;
         justify-content: space-evenly;
     }
@@ -29,7 +29,7 @@ const Content = styled.div`
     flex-direction: column;
     margin: 0 2rem;
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         align-items: center;
         margin: 3rem 0;
     }
@@ -88,7 +88,7 @@ const Screenshots = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         width: 35rem;
         height: 35rem;
     }

@@ -55,6 +55,15 @@ const Carousel = styled.div`
         right: 1rem;
     }
 
+    .slick-prev {
+        @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+            left: -1rem;
+        }
+        @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
+            left: -0.5rem;
+        }
+    }
+
     .slick-prev::before {
         color: ${props => props.theme.colors.redOrange};
         font-size: 4rem;
@@ -66,12 +75,8 @@ const Carousel = styled.div`
     }
 
     .slick-dots {
-        bottom: -3rem;
+        bottom: -5rem;
         color: red;
-
-        @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
-            bottom: -6rem;
-        }
 
         li button::before {
             color: ${props => props.theme.colors.redOrange};

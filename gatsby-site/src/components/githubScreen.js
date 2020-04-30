@@ -11,7 +11,7 @@ const Background = styled.div`
     height: 50vh;
     background: ${props => props.theme.colors.white};
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         height: 100vh;
     }
 `;
@@ -23,10 +23,9 @@ const BlockContainer = styled.div`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         height: 100vh;
         flex-direction: column;
-        justify-content: space-evenly;
     }
 `;
 
@@ -36,7 +35,7 @@ const ColumnTitleContent = styled.div`
     flex-direction: column;
     align-items: center;
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         width: 80%;
     }
 `;
@@ -88,7 +87,7 @@ const ColumnImageOneText = styled.a`
         transform: scale(1.1);
     }
 
-    @media (max-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         margin-left: 0;
     }
 `;

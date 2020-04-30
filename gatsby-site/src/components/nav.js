@@ -47,8 +47,7 @@ const BlockContainer = styled.div`
         }
     }
 
-    .nav-color.active,
-    .nav-color.github-active {
+    .nav-color.active {
         border-bottom: solid 2px red;
         color: ${props => props.theme.colors.red};
     }

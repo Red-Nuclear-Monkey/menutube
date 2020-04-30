@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .7}rem;
+        font-size: ${defaultSizeFont * .8}rem;
     }
 }
 
