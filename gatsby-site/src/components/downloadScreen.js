@@ -130,7 +130,6 @@ class Download extends React.Component {
     }
     componentDidMount() {
         if (typeof window !== 'undefined') {
-            console.log(this.isMobile());
             const Plyr = require('plyr');
             const player = new Plyr('#player', {
                 loop: { active: true },
