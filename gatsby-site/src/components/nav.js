@@ -206,7 +206,11 @@ class Nav extends React.Component {
     listenScrollEvent = () => {
         const heightPercentage = window.document.body.scrollHeight * 0.02;
         const nav = document.querySelector('.nav-bar');
-        if (window.scrollY > heightPercentage) {
+        const el = this.el.current;
+        if (
+            window.scrollY > heightPercentage &&
+            !el.classList.contains('open-menu')
+        ) {
             nav.classList.add('scrolling');
             this.setState({
                 menuButton: 'menu-white.svg'
