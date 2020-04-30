@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontStyle from './fontStyle';
+import triangles from '../images/background-triangle.jpg';
 
 const Background = styled.div`
     position: relative;
@@ -15,6 +16,19 @@ const Background = styled.div`
         background: rgb(211, 92, 80, .85);
     }
 
+    #image-background {
+        display: none;
+
+        @media (pointer: coarse) {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-image: url(${triangles});
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
     #video-background {
         position: relative;
         top: 0;
@@ -23,6 +37,10 @@ const Background = styled.div`
         opacity: 0;
         transition: opacity 1500ms ease-in;
         will-change: opacity;
+
+        @media (pointer: coarse) {
+            display: none;
+        }
     }
 
     #video-background.visible {
@@ -107,15 +125,20 @@ const DownloadButton = styled.button`
 `;
 
 class Download extends React.Component {
+    isMobile() {
+        return !matchMedia('(pointer:coarse)').matches;
+    }
     componentDidMount() {
         if (typeof window !== 'undefined') {
+            console.log(this.isMobile());
             const Plyr = require('plyr');
             const player = new Plyr('#player', {
                 loop: { active: true },
                 muted: true,
                 autoplay: true,
                 storage: { enabled: false },
-                controls: false
+                controls: false,
+                enabled: this.isMobile()
             });
             player.on('play', () => {
                 const video = document.querySelector('#video-background');
@@ -128,6 +151,7 @@ class Download extends React.Component {
         return (
             <Background id="download">
                 <div className="blur" />
+                <div id="image-background" />
                 <div id="video-background">
                     <div
                         id="player"

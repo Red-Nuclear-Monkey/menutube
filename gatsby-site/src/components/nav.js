@@ -99,7 +99,8 @@ const MenuLogoContainer = styled.div`
     justify-content: space-between;
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
-        width: 95%;
+        width: 100%;
+        padding: 0 1rem;
     }
 `;
 

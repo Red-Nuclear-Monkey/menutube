@@ -4,6 +4,7 @@ import play from '../images/playbutton.png';
 import FontStyle from './fontStyle';
 
 const Background = styled.div`
+    overflow: hidden;
     height: 100vh;
     background: ${props => props.theme.colors.white};
 `;
