@@ -59,8 +59,9 @@ const Carousel = styled.div`
         @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
             left: -1rem;
         }
+
         @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
-            left: -0.5rem;
+            left: -.5rem;
         }
     }
 
