@@ -5,6 +5,7 @@ import triangles from '../images/background-triangle.jpg';
 
 const Background = styled.div`
     position: relative;
+    overflow: hidden;
     height: 100vh;
 
     .blur {
@@ -32,8 +33,10 @@ const Background = styled.div`
     #video-background {
         position: relative;
         top: 0;
-        width: 100%;
+        width: 177.77777778vh;
+        min-width: 100%;
         height: 100%;
+        min-height: 56.25vw;
         opacity: 0;
         transition: opacity 1500ms ease-in;
         will-change: opacity;
