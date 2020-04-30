@@ -61,24 +61,29 @@ const BlockContainer = styled.div`
     }
 
     .nav-bar.open-menu {
-        background-color: ${props => props.theme.colors.white};
         height: 100vh;
-        
-        .nav-container{
-        height: 100%;
+        background-color: ${props => props.theme.colors.white};
+
+        .nav-container {
+            height: 100%;
         }
 
         .nav-titles {
             display: flex;
-            height: 100%;
+            flex: 1;
             flex-direction: column;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: start;
+            margin-top: 5rem;
             font-size: ${props => props.theme.fontsize.fourthHeader};
         }
 
         .logo-title {
             color: black;
+        }
+
+        a {
+            margin: 2rem 0;
         }
     }
 `;
