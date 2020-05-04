@@ -83,6 +83,11 @@ const ColumnImageOneText = styled.a`
     cursor: pointer;
     text-decoration: none;
 
+    :focus {
+        box-shadow: 0 0 0 2px #88b8ff;
+        outline: none;
+    }
+
     :hover {
         transform: scale(1.1);
     }
@@ -125,6 +130,11 @@ const ColumnImageTwo = styled.a`
 
     :hover {
         transform: scale(1.1);
+    }
+
+    :focus {
+        box-shadow: 0 0 0 2px #88b8ff;
+        outline: none;
     }
 `;
 

@@ -67,6 +67,11 @@ const Donate = styled.button`
     :hover {
         transform: scale(1.1);
     }
+
+    :focus {
+        box-shadow: 0 0 0 2px #88b8ff;
+        outline: none;
+    }
 `;
 
 const BRTop = styled.div`

@@ -78,6 +78,11 @@ const DownloadButton = styled.button`
     :hover {
         transform: scale(1.05);
     }
+
+    :focus {
+        box-shadow: 0 0 0 2px #88b8ff;
+        outline: none;
+    }
 `;
 
 const Screenshots = styled.div`
