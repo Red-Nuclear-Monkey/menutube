@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontStyle, FocusStyle } from './cssStyle';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const FooterSite = styled.footer`
     padding-bottom: 1rem;
@@ -11,6 +12,14 @@ const FooterSite = styled.footer`
         400
     )};
     text-align: center;
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const Link = styled.a`

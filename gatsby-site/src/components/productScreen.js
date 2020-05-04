@@ -7,18 +7,18 @@ import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    height: 100vh;
+    height: 92vh;
     background: ${props => props.theme.colors.black};
 `;
 
 const BlockContainer = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) and (orientation: portrait) {
         flex-direction: column;
         justify-content: space-evenly;
     }
@@ -29,7 +29,7 @@ const Content = styled.div`
     flex-direction: column;
     margin: 0 2rem;
 
-    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) and (orientation: portrait) {
         align-items: center;
         margin: 3rem 0;
     }
@@ -57,6 +57,14 @@ const Sentence = styled.div`
         props => props.theme.fontsize.default,
         300
     )};
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const DownloadButton = styled.button`
@@ -75,6 +83,16 @@ const DownloadButton = styled.button`
     cursor: pointer;
     text-align: center;
 
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 27rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 27rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
     :hover {
         transform: scale(1.05);
     }
@@ -92,9 +110,14 @@ const Screenshots = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
 
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) and (orientation: portrait) {
+        width: 27rem;
+        height: 27rem;
+    }
+
     @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
-        width: 35rem;
-        height: 35rem;
+        width: 32rem;
+        height: 32rem;
     }
 `;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
 import { FontStyle } from './cssStyle';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
     overflow: hidden;
@@ -11,7 +12,7 @@ const Background = styled.div`
 
 const Content = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -70,14 +71,24 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
+    width: 95%;
     margin-top: ${props => props.theme.marginTop.smallSpace};
+    font-weight: 300;
+    text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.default,
         300,
         'italic'
     )};
-    font-weight: 300;
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const Play = styled.div`

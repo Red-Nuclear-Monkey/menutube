@@ -60,16 +60,16 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .55}rem;
+        font-size: ${defaultSizeFont * .5}rem;
     }
 }
 
 /* iPhone 4 (Landscape) ----------- */
-@media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (orientation: landscape) {
+@media only screen and (min-device-width: 320px) and (max-device-height: 480px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .35}rem;
+        font-size: ${defaultSizeFont * .4}rem;
     }
 }
 

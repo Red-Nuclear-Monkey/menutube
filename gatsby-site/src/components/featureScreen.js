@@ -8,13 +8,13 @@ import gatsbyastro from '../images/gatsby-astronaut.png';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    max-height: 100vh;
+    height: 100vh;
     background: ${props => props.theme.colors.white};
 `;
 
 const BlockContainer = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
@@ -81,6 +81,10 @@ const Carousel = styled.div`
     .slick-dots {
         bottom: -5rem;
         color: red;
+
+        @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+            bottom: -3rem;
+        }
 
         li button::before {
             color: ${props => props.theme.colors.redOrange};

@@ -14,11 +14,15 @@ const Background = styled.div`
     @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
         height: 100vh;
     }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.tabletPortrait}) {
+        height: 75vh;
+    }
 `;
 
 const BlockContainer = styled.div`
     display: flex;
-    height: 50vh;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -59,6 +63,14 @@ const Text = styled.div`
         300
     )};
     text-align: justify;
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const BoxContainer = styled.div`
@@ -110,6 +122,14 @@ const ImageText = styled.div`
         props => props.theme.fontsize.default,
         700
     )};
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const ColumnImageTwo = styled.a`

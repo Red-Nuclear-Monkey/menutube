@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FocusStyle, FontStyle } from './cssStyle';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    max-height: 100vh;
+    height: 100vh;
     background: ${props => props.theme.colors.white};
 `;
 
 const Content = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -42,7 +43,7 @@ const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
     ${FontStyle(
         props => props.theme.colors.black,
-        props => props.theme.fontsize.fourthHeader,
+        props => props.theme.fontsize.defaultMobilePortrait,
         100,
         'normal',
         'all-small-caps'
@@ -64,12 +65,22 @@ const Donate = styled.button`
     )};
     cursor: pointer;
 
-    :hover {
-        transform: scale(1.1);
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 12rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
     }
 
-    :focus {
-        ${FocusStyle};
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 12rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+
+        :hover {
+            transform: scale(1.1);
+        }
+
+        :focus {
+            ${FocusStyle};
+        }
     }
 `;
 

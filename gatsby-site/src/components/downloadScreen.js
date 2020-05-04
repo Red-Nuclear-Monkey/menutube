@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FocusStyle, FontStyle } from './cssStyle';
 import triangles from '../images/background-triangle.jpg';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
     position: relative;
@@ -55,7 +56,7 @@ const Content = styled.div`
     position: absolute;
     top: 0;
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -121,6 +122,16 @@ const DownloadButton = styled.button`
     )};
     cursor: pointer;
     text-align: center;
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 15rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+        width: 15rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
 
     :hover {
         transform: scale(1.05);
