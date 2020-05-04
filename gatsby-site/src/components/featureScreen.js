@@ -52,16 +52,19 @@ const Carousel = styled.div`
     }
 
     .slick-next {
-        right: 1rem;
+        @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+            right: -1rem;
+        }
+    }
+
+    .slick-arrow {
+        width: 4rem;
+        height: 4rem;
     }
 
     .slick-prev {
         @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
             left: -1rem;
-        }
-
-        @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
-            left: -.5rem;
         }
     }
 
