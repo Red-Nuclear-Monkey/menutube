@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
 
 const Background = styled.div`
     max-height: 100vh;
@@ -69,8 +69,7 @@ const Donate = styled.button`
     }
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 `;
 

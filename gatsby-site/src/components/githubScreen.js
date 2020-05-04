@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import redNuclearLogo from '../images/rednuclear-monkey.png';
 import githubLogo from '../images/github.png';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
@@ -84,8 +84,7 @@ const ColumnImageOneText = styled.a`
     text-decoration: none;
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 
     :hover {
@@ -133,8 +132,7 @@ const ColumnImageTwo = styled.a`
     }
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 `;
 

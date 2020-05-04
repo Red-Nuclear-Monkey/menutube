@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import menutube from '../images/menutube-play.png';
 import { Link } from 'react-scroll';
 import { sizeMediaQueries } from '../utils/responsive';
-import FontStyle from './fontStyle';
+import { FontStyle } from './cssStyle';
 
 const BlockContainer = styled.div`
     position: fixed;

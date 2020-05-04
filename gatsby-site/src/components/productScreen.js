@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import screenshots from '../images/screenshots.png';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
@@ -80,8 +80,7 @@ const DownloadButton = styled.button`
     }
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 `;
 

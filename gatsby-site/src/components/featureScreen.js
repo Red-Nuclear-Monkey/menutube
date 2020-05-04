@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FontStyle } from './cssStyle';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';

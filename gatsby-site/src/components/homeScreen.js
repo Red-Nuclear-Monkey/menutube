@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import play from '../images/playbutton.png';
-import FontStyle from './fontStyle';
+import { FontStyle } from './cssStyle';
 
 const Background = styled.div`
     overflow: hidden;

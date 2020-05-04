@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FontStyle, FocusStyle } from './cssStyle';
 
 const FooterSite = styled.footer`
     padding-bottom: 1rem;
@@ -17,8 +17,7 @@ const Link = styled.a`
     color: ${props => props.theme.colors.blue};
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 `;
 

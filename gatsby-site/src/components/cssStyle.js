@@ -17,4 +17,11 @@ const FontStyle = (
 `;
 };
 
-export default FontStyle;
+const FocusStyle = () => {
+    return css`
+        box-shadow: 0 0 0 2px ${props => props.theme.colors.blueOutline};
+        outline: none;
+`;
+};
+
+export { FontStyle, FocusStyle };

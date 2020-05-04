@@ -8,6 +8,7 @@ const theme = {
         red: '#F22323',
         redOrange: '#D35C50',
         blue: '#0975C3',
+        blueOutline: '#88b8ff',
         green: '#00cc66'
     },
     borderRadius: {

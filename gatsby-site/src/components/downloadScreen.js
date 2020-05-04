@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
 import triangles from '../images/background-triangle.jpg';
 
 const Background = styled.div`
@@ -127,8 +127,7 @@ const DownloadButton = styled.button`
     }
 
     :focus {
-        box-shadow: 0 0 0 2px #88b8ff;
-        outline: none;
+        ${FocusStyle};
     }
 `;
 
