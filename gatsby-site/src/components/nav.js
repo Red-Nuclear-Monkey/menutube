@@ -116,11 +116,11 @@ const MenuLogoContainer = styled.div`
 const LogoContainer = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
 `;
 
 const LogoTitle = styled.div`
     display: none;
-    align-items: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.fourthHeader,
@@ -129,6 +129,8 @@ const LogoTitle = styled.div`
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         display: flex;
+        position: relative;
+        top: .125rem;
     }
 
     @media (min-width: ${sizeMediaQueries.mobileLandscape}) and (max-width: ${sizeMediaQueries.tabletLandscape}) {
