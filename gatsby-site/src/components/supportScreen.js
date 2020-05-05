@@ -37,6 +37,11 @@ const SubTitle = styled.div`
     .bold-text {
         font-weight: 500;
     }
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 90%;
+        font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
+    }
 `;
 
 const Sentence = styled.div`
@@ -48,6 +53,10 @@ const Sentence = styled.div`
         'normal',
         'all-small-caps'
     )};
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
+    }
 `;
 
 const Donate = styled.button`
@@ -65,22 +74,17 @@ const Donate = styled.button`
     )};
     cursor: pointer;
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 12rem;
         font-size: ${props => props.theme.fontsize.fourthHeader};
     }
 
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        width: 12rem;
-        font-size: ${props => props.theme.fontsize.fourthHeader};
+    :hover {
+        transform: scale(1.1);
+    }
 
-        :hover {
-            transform: scale(1.1);
-        }
-
-        :focus {
-            ${FocusStyle};
-        }
+    :focus {
+        ${FocusStyle};
     }
 `;
 

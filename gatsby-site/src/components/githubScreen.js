@@ -15,7 +15,7 @@ const Background = styled.div`
         height: 100vh;
     }
 
-    @media only screen and (min-device-width: ${sizeMediaQueries.tabletPortrait}) {
+    @media only screen and (min-device-width: ${sizeMediaQueries.tabletPortrait}) and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         height: 75vh;
     }
 `;
@@ -64,11 +64,7 @@ const Text = styled.div`
     )};
     text-align: justify;
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
     }
 `;
@@ -103,7 +99,7 @@ const ColumnImageOneText = styled.a`
         transform: scale(1.1);
     }
 
-    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         margin-left: 0;
     }
 `;
@@ -123,11 +119,7 @@ const ImageText = styled.div`
         700
     )};
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
     }
 `;

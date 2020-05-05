@@ -83,12 +83,7 @@ const DownloadButton = styled.button`
     cursor: pointer;
     text-align: center;
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        width: 27rem;
-        font-size: ${props => props.theme.fontsize.fourthHeader};
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 27rem;
         font-size: ${props => props.theme.fontsize.fourthHeader};
     }
@@ -115,9 +110,14 @@ const Screenshots = styled.div`
         height: 27rem;
     }
 
-    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 32rem;
         height: 32rem;
+    }
+
+    @media (min-width: 768px) and (max-width: 950px) {
+        width: 20rem;
+        height: 20rem;
     }
 `;
 

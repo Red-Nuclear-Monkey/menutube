@@ -13,12 +13,8 @@ const FooterSite = styled.footer`
     )};
     text-align: center;
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.fourthHeader};
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
     }
 `;
 

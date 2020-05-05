@@ -123,13 +123,8 @@ const DownloadButton = styled.button`
     cursor: pointer;
     text-align: center;
 
-    @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        width: 15rem;
-        font-size: ${props => props.theme.fontsize.fourthHeader};
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.mobileLandscape}) {
-        width: 15rem;
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 17rem;
         font-size: ${props => props.theme.fontsize.fourthHeader};
     }
 
