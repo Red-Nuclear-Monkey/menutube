@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    height: 92vh;
+    height: 100vh;
     background: ${props => props.theme.colors.black};
 `;
 
