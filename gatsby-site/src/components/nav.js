@@ -128,9 +128,9 @@ const LogoTitle = styled.div`
     )};
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
-        display: flex;
         position: relative;
         top: .125rem;
+        display: flex;
     }
 
     @media (min-width: ${sizeMediaQueries.mobileLandscape}) and (max-width: ${sizeMediaQueries.tabletLandscape}) {
