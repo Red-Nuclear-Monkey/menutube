@@ -70,19 +70,28 @@ const BlockContainer = styled.div`
 
         .nav-titles {
             display: flex;
+            width: 100%;
+            height: 100%;
             flex: 1;
             flex-direction: column;
             align-items: center;
-            justify-content: start;
-            margin-top: 5rem;
-            font-size: ${props => props.theme.fontsize.fourthHeader};
+            justify-content: center;
+            font-size: ${props => props.theme.fontsize.thirdHeader};
+            text-align: center;
+
+            .nav-color.active {
+                border-bottom: none;
+                background-color: ${props => props.theme.colors.red};
+                color: ${props => props.theme.colors.white};
+            }
         }
 
         .logo-title {
-            color: black;
+            color: ${props => props.theme.colors.black};
         }
 
         a {
+            width: 40%;
             margin: 2rem 0;
         }
     }
@@ -106,6 +115,14 @@ const MenuLogoContainer = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    &.position {
+        position: relative;
+    }
+
+    &.position.fixed {
+        position: fixed;
+    }
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 100%;
@@ -178,7 +195,7 @@ class Nav extends React.Component {
         if (window.innerWidth <= parseInt(sizeMediaQueries.tabletLandscape)) {
             const el = this.el.current;
             const nav = document.querySelector('.nav-bar');
-            const body = document.querySelector('body');
+            const position = document.querySelector('.position');
 
             this.setState(
                 {
@@ -190,10 +207,10 @@ class Nav extends React.Component {
                 },
                 () => {
                     this.el.current.classList.toggle('open-menu');
-                    if (!body.classList.contains('no-scroll')) {
-                        body.classList.add('no-scroll');
+                    if (!position.classList.contains('fixed')) {
+                        position.classList.add('fixed');
                     } else {
-                        body.classList.remove('no-scroll');
+                        position.classList.remove('fixed');
                     }
                 }
             );
@@ -232,7 +249,7 @@ class Nav extends React.Component {
             <BlockContainer>
                 <div {...this.props} className="nav-bar" ref={this.el}>
                     <NavContainer className="nav-container">
-                        <MenuLogoContainer>
+                        <MenuLogoContainer className="position">
                             <LogoContainer>
                                 <LogoTitle className="logo-title">
                                     MenuTube
