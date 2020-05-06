@@ -29,7 +29,11 @@ const Link = styled.a`
 const Footer = () => (
     <FooterSite>
         © 2020 Red Nuclear Monkey -{' '}
-        <Link href="https://www.rednuclearmonkey.com">
+        <Link
+            href="https://www.rednuclearmonkey.com"
+            target="_blank"
+            rel="noopener"
+        >
             rednuclearmonkey.com
         </Link>
     </FooterSite>

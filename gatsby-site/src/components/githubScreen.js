@@ -8,7 +8,7 @@ import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    height: 50vh;
+    height: 60vh;
     background: ${props => props.theme.colors.white};
 
     @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
@@ -63,6 +63,10 @@ const Text = styled.div`
         300
     )};
     text-align: justify;
+
+    span.highlight {
+        background: rgb(211, 92, 80, .1);
+    }
 
     @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
@@ -169,11 +173,17 @@ class Github extends React.Component {
                     <ColumnTitleContent>
                         <Title>GitHub</Title>
                         <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            <b>MenuTube</b> has already existed for more than 3
+                            years! You can find the old GitHub repository. This
+                            tool is now developed by the company{' '}
+                            <b>Red Nuclear Monkey</b>.
+                            <br /> <br />
+                            Don't hesitate to take a look at our company by
+                            visiting our website and leave a message or even
+                            issues regarding MenuTube.{' '}
+                            <span className="highlight">
+                                We would love to hear them!
+                            </span>
                         </Text>
                     </ColumnTitleContent>
                     <BoxContainer>

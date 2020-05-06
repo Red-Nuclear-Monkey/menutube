@@ -4,7 +4,12 @@ import { FontStyle } from './cssStyle';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import gatsbyastro from '../images/gatsby-astronaut.png';
+import search from '../images/search-icon.svg';
+import keyboard from '../images/keyboard-icon.svg';
+import listen from '../images/listen-icon.svg';
+import content from '../images/content-icon.svg';
+import live from '../images/live-icon.svg';
+import ui from '../images/ui-icon.svg';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
@@ -79,12 +84,7 @@ const Carousel = styled.div`
     }
 
     .slick-dots {
-        bottom: -5rem;
-        color: red;
-
-        @media only screen and (max-device-width: ${sizeMediaQueries.mobileLandscape}) {
-            bottom: -3rem;
-        }
+        color: ${props => props.theme.colors.redOrange};
 
         li button::before {
             color: ${props => props.theme.colors.redOrange};
@@ -112,22 +112,48 @@ const Item = styled.div`
 const TextCarousel = styled.div`
     ${FontStyle(
         props => props.theme.colors.black,
-        props => props.theme.fontsize.thirdHeader,
+        props => props.theme.fontsize.fourthHeader,
         400,
         'normal',
         'all-small-caps'
     )};
-    margin: 2rem 0;
+    width: 90%;
+    height: 5rem;
+    margin: 2rem auto;
+    line-height: 1.8rem;
 `;
 
-const GatsbyAstro = styled.div`
+const Icon = styled.div`
     width: 15rem;
     height: 15rem;
     justify-content: center;
     margin: 0 auto;
-    background-image: url(${gatsbyastro});
     background-repeat: no-repeat;
     background-size: contain;
+
+    &.icon-1 {
+        background-image: url(${search});
+    }
+
+    &.icon-2 {
+        background-image: url(${listen});
+    }
+
+    &.icon-3 {
+        background-image: url(${content});
+    }
+
+    &.icon-4 {
+        background-image: url(${keyboard});
+    }
+
+    &.icon-5 {
+        background-image: url(${ui});
+    }
+
+    &.icon-6 {
+        background-image: url(${live});
+    }
 `;
 
 const settings = {
@@ -170,28 +196,36 @@ const Feature = () => (
             <Carousel>
                 <Slider {...settings}>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 1</TextCarousel>
+                        <Icon className="icon-1" />
+                        <TextCarousel>
+                            Browse mobile or desktop versions
+                        </TextCarousel>
                     </Item>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 2</TextCarousel>
+                        <Icon className="icon-2" />
+                        <TextCarousel>
+                            Listen in background or pin on top of all windows
+                        </TextCarousel>
                     </Item>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 3</TextCarousel>
+                        <Icon className="icon-3" />
+                        <TextCarousel>
+                            Enjoy endless amount of content
+                        </TextCarousel>
                     </Item>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 4</TextCarousel>
+                        <Icon className="icon-4" />
+                        <TextCarousel>
+                            Control media playback using keyboard
+                        </TextCarousel>
                     </Item>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 5</TextCarousel>
+                        <Icon className="icon-5" />
+                        <TextCarousel>Simple and intuitive UI</TextCarousel>
                     </Item>
                     <Item>
-                        <GatsbyAstro />
-                        <TextCarousel>Item 6</TextCarousel>
+                        <Icon className="icon-6" />
+                        <TextCarousel>Watch live</TextCarousel>
                     </Item>
                 </Slider>
             </Carousel>

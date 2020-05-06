@@ -48,7 +48,6 @@ const BlockContainer = styled.div`
     }
 
     .nav-color.active {
-        border-bottom: solid 2px red;
         color: ${props => props.theme.colors.red};
     }
 
@@ -80,7 +79,6 @@ const BlockContainer = styled.div`
             text-align: center;
 
             .nav-color.active {
-                border-bottom: none;
                 background-color: ${props => props.theme.colors.red};
                 color: ${props => props.theme.colors.white};
             }
