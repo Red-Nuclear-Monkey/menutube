@@ -122,14 +122,27 @@ const Screenshots = styled.div`
 `;
 
 class Product extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            offset: '200'
+        };
+    }
+
     componentDidMount() {
-        Aos.init();
+        this.setState({ offset: window.innerHeight * 0.85 }, () => {
+            Aos.init();
+        });
     }
 
     render() {
         return (
             <Background id="product">
-                <BlockContainer data-aos="zoom-in" data-aos-duration="1500">
+                <BlockContainer
+                    data-aos="zoom-in"
+                    data-aos-duration="1500"
+                    data-aos-offset={this.state.offset}
+                >
                     <Content>
                         <SubTitle>Use</SubTitle>
                         <Title>MenuTube</Title>

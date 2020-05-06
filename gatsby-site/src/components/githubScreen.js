@@ -162,14 +162,27 @@ const RedNuclearMonkey = styled.div`
 `;
 
 class Github extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            offset: '200'
+        };
+    }
+
     componentDidMount() {
-        Aos.init();
+        this.setState({ offset: window.innerHeight * 0.5 }, () => {
+            Aos.init();
+        });
     }
 
     render() {
         return (
             <Background id="github">
-                <BlockContainer data-aos="fade-right" data-aos-duration="1000">
+                <BlockContainer
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    data-aos-offset={this.state.offset}
+                >
                     <ColumnTitleContent>
                         <Title>GitHub</Title>
                         <Text>

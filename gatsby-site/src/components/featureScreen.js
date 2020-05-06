@@ -106,6 +106,7 @@ const Carousel = styled.div`
 
 const Item = styled.div`
     color: black;
+    outline: none;
     text-align: center;
 `;
 
