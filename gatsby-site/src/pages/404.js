@@ -106,10 +106,8 @@ const NotFoundPage = () => (
                     <Homepage
                         onClick={e => {
                             e.preventDefault();
-                            window.open(
-                                'https://menutube.rednuclearmonkey.com/',
-                                '_blank'
-                            );
+                            window.location.href =
+                                'https://menutube.rednuclearmonkey.com/';
                         }}
                     >
                         HOMEPAGE
