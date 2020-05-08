@@ -6,6 +6,21 @@ module.exports = {
         author: `@gatsbyjs`
     },
     plugins: [
+        {
+            resolve: 'gatsby-plugin-firebase',
+            options: {
+                credentials: {
+                    apiKey: 'AIzaSyC1liRnM75LEeneOttStvr1HCPflhYVQBA',
+                    authDomain: 'menutube-befbd.firebaseapp.com',
+                    databaseURL: 'https://menutube-befbd.firebaseio.com',
+                    projectId: 'menutube-befbd',
+                    storageBucket: 'menutube-befbd.appspot.com',
+                    messagingSenderId: '72455970051',
+                    appId: '1:72455970051:web:99f291957b5b35b4201d36',
+                    measurementId: 'G-MHQQYGBPVF'
+                }
+            }
+        },
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-source-filesystem`,
