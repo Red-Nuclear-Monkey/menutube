@@ -11,6 +11,7 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, lang, meta, title }) {
+    const siteUrl = 'https://menutube.rednuclearmonkey.com/';
     const { site } = useStaticQuery(
         graphql`
             query {
@@ -19,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
                         title
                         description
                         author
+                        image
                     }
                 }
             }
@@ -46,6 +48,10 @@ function SEO({ description, lang, meta, title }) {
                 {
                     property: `og:description`,
                     content: metaDescription
+                },
+                {
+                    property: `og:image`,
+                    content: `${siteUrl}${site.siteMetadata.image}`
                 },
                 {
                     property: `og:type`,

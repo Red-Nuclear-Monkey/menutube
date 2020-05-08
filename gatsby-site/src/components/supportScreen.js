@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    max-height: 100vh;
+    height: 100vh;
     background: ${props => props.theme.colors.white};
 `;
 
 const Content = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -24,7 +25,9 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
+    width: 80%;
     margin-top: ${props => props.theme.marginTop.smallSpace};
+    text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.fourthHeader,
@@ -34,17 +37,26 @@ const SubTitle = styled.div`
     .bold-text {
         font-weight: 500;
     }
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 90%;
+        font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
+    }
 `;
 
 const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
     ${FontStyle(
         props => props.theme.colors.black,
-        props => props.theme.fontsize.fourthHeader,
+        props => props.theme.fontsize.defaultMobilePortrait,
         100,
         'normal',
         'all-small-caps'
     )};
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
+    }
 `;
 
 const Donate = styled.button`
@@ -62,8 +74,17 @@ const Donate = styled.button`
     )};
     cursor: pointer;
 
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 12rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
     :hover {
         transform: scale(1.1);
+    }
+
+    :focus {
+        ${FocusStyle};
     }
 `;
 
@@ -103,7 +124,14 @@ const Support = () => (
                 <span className="bold-text">feel free</span> to donate.
             </SubTitle>
             <Sentence>Your donations help developers.</Sentence>
-            <Donate>DONATE</Donate>
+            <Donate
+                onClick={e => {
+                    e.preventDefault();
+                    window.open('https://www.paypal.me/EDanchenkov', '_blank');
+                }}
+            >
+                DONATE
+            </Donate>
         </Content>
         <BRBottom />
     </Background>

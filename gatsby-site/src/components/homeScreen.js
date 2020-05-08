@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import play from '../images/playbutton.png';
-import FontStyle from './fontStyle';
+import { FontStyle } from './cssStyle';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
+    overflow: hidden;
     height: 100vh;
     background: ${props => props.theme.colors.white};
 `;
 
 const Content = styled.div`
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -35,8 +36,8 @@ const Title = styled.div`
 
     span.cursor {
         display: inline-block;
-        width: .2rem;
-        margin-right: .5rem;
+        width: 0.2rem;
+        margin-right: 0.5rem;
         animation: blink 1s infinite;
         background-color: ${props => props.theme.colors.black};
     }
@@ -69,23 +70,20 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
+    width: 95%;
     margin-top: ${props => props.theme.marginTop.smallSpace};
+    font-weight: 300;
+    text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.default,
         300,
         'italic'
     )};
-    font-weight: 300;
-`;
 
-const Play = styled.div`
-    width: 15rem;
-    height: 10rem;
-    margin-top: ${props => props.theme.marginTop.smallSpace};
-    background-image: url(${play});
-    background-repeat: no-repeat;
-    background-size: contain;
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 class Home extends React.Component {
@@ -155,7 +153,6 @@ class Home extends React.Component {
                         * or anything else that doesn’t require to focus on
                         video
                     </SubTitle>
-                    <Play />
                 </Content>
             </Background>
         );

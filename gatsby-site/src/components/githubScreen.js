@@ -2,21 +2,34 @@ import React from 'react';
 import styled from 'styled-components';
 import redNuclearLogo from '../images/rednuclear-monkey.png';
 import githubLogo from '../images/github.png';
-import FontStyle from './fontStyle';
-import Aos from 'aos';
+import { FocusStyle, FontStyle } from './cssStyle';
 import 'aos/dist/aos.css';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    height: 50vh;
+    height: 60vh;
     background: ${props => props.theme.colors.white};
+
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+        height: 100vh;
+    }
+
+    @media only screen and (min-device-width: ${sizeMediaQueries.tabletPortrait}) and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        height: 75vh;
+    }
 `;
 
 const BlockContainer = styled.div`
     display: flex;
-    height: 50vh;
+    height: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+        height: 100vh;
+        flex-direction: column;
+    }
 `;
 
 const ColumnTitleContent = styled.div`
@@ -24,10 +37,14 @@ const ColumnTitleContent = styled.div`
     width: 40%;
     flex-direction: column;
     align-items: center;
+
+    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
+        width: 80%;
+    }
 `;
 
 const Title = styled.div`
-    border-bottom-width: .4rem;
+    border-bottom-width: 0.4rem;
     border-bottom-style: solid;
     border-bottom-color: ${props => props.theme.colors.redOrange};
     ${FontStyle(
@@ -45,6 +62,25 @@ const Text = styled.div`
         300
     )};
     text-align: justify;
+
+    span.highlight {
+        background: rgba(211, 92, 80, 0.1);
+    }
+
+    span.bold {
+        font-weight: 700;
+    }
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
+`;
+
+const BoxContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 `;
 
 const ColumnImageOneText = styled.a`
@@ -58,12 +94,20 @@ const ColumnImageOneText = styled.a`
     margin-left: 6rem;
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 
+    :focus {
+        ${FocusStyle};
+    }
+
     :hover {
         transform: scale(1.1);
+    }
+
+    @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
+        margin-left: 0;
     }
 `;
 
@@ -81,6 +125,10 @@ const ImageText = styled.div`
         props => props.theme.fontsize.default,
         700
     )};
+
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
+    }
 `;
 
 const ColumnImageTwo = styled.a`
@@ -94,58 +142,82 @@ const ColumnImageTwo = styled.a`
     margin-left: 4rem;
     background-color: ${props => props.theme.colors.black};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 
     :hover {
         transform: scale(1.1);
     }
+
+    :focus {
+        ${FocusStyle};
+    }
 `;
 
 const RedNuclearMonkey = styled.div`
     width: 10rem;
     height: 3rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     background-image: url(${redNuclearLogo});
     background-repeat: no-repeat;
     background-size: contain;
 `;
 
 class Github extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            offset: '0'
+        };
+    }
+
     componentDidMount() {
-        Aos.init();
+        this.setState({ offset: window.innerHeight * 0.5 });
     }
 
     render() {
         return (
             <Background id="github">
-                <BlockContainer data-aos="fade-right" data-aos-duration="1000">
+                <BlockContainer
+                    data-aos="fade-right"
+                    data-aos-duration="1000"
+                    data-aos-offset={this.state.offset}
+                >
                     <ColumnTitleContent>
                         <Title>GitHub</Title>
                         <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
+                            <span className="bold">MenuTube</span> has already
+                            existed for more than 3 years! You can find the old
+                            GitHub repository. This tool is now developed by the
+                            company{' '}
+                            <span className="bold">Red Nuclear Monkey</span>.
+                            <br /> <br />
+                            Don't hesitate to take a look at our company by
+                            visiting our website and leave a message or even
+                            issues regarding MenuTube.{' '}
+                            <span className="highlight">
+                                We would love to hear them!
+                            </span>
                         </Text>
                     </ColumnTitleContent>
-                    <ColumnImageOneText
-                        href="https://github.com/edanchenkov/MenuTube"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <GitHub />
-                        <ImageText>OLD REPO</ImageText>
-                    </ColumnImageOneText>
-                    <ColumnImageTwo
-                        href="https://rednuclearmonkey.com"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        <RedNuclearMonkey />
-                    </ColumnImageTwo>
+                    <BoxContainer>
+                        <ColumnImageOneText
+                            href="https://github.com/edanchenkov/MenuTube"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <GitHub />
+                            <ImageText>OLD REPO</ImageText>
+                        </ColumnImageOneText>
+                        <ColumnImageTwo
+                            href="https://rednuclearmonkey.com"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            <RedNuclearMonkey />
+                        </ColumnImageTwo>
+                    </BoxContainer>
                 </BlockContainer>
             </Background>
         );

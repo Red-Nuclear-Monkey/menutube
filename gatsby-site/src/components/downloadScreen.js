@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import FontStyle from './fontStyle';
+import { FocusStyle, FontStyle } from './cssStyle';
+import triangles from '../images/background-triangle.jpg';
+import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
     position: relative;
+    overflow: hidden;
     height: 100vh;
 
     .blur {
@@ -12,17 +15,36 @@ const Background = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgb(211, 92, 80, .85);
+        background: rgba(211, 92, 80, 0.85);
+    }
+
+    #image-background {
+        display: none;
+
+        @media (pointer: coarse) {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-image: url(${triangles});
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
     }
 
     #video-background {
         position: relative;
         top: 0;
-        width: 100%;
+        width: 177.77777778vh;
+        min-width: 100%;
         height: 100%;
+        min-height: 56.25vw;
         opacity: 0;
         transition: opacity 1500ms ease-in;
         will-change: opacity;
+
+        @media (pointer: coarse) {
+            display: none;
+        }
     }
 
     #video-background.visible {
@@ -34,7 +56,7 @@ const Content = styled.div`
     position: absolute;
     top: 0;
     display: flex;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -101,12 +123,24 @@ const DownloadButton = styled.button`
     cursor: pointer;
     text-align: center;
 
+    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
+        width: 17rem;
+        font-size: ${props => props.theme.fontsize.fourthHeader};
+    }
+
     :hover {
         transform: scale(1.05);
+    }
+
+    :focus {
+        ${FocusStyle};
     }
 `;
 
 class Download extends React.Component {
+    isMobile() {
+        return !matchMedia('(pointer:coarse)').matches;
+    }
     componentDidMount() {
         if (typeof window !== 'undefined') {
             const Plyr = require('plyr');
@@ -115,7 +149,8 @@ class Download extends React.Component {
                 muted: true,
                 autoplay: true,
                 storage: { enabled: false },
-                controls: false
+                controls: false,
+                enabled: this.isMobile()
             });
             player.on('play', () => {
                 const video = document.querySelector('#video-background');
@@ -128,6 +163,7 @@ class Download extends React.Component {
         return (
             <Background id="download">
                 <div className="blur" />
+                <div id="image-background" />
                 <div id="video-background">
                     <div
                         id="player"
@@ -145,7 +181,17 @@ class Download extends React.Component {
                         YouTube website into your macOS’s menu bar?
                     </Sentence>
                     <Release>Get the last release</Release>
-                    <DownloadButton>DOWNLOAD</DownloadButton>
+                    <DownloadButton
+                        onClick={e => {
+                            e.preventDefault();
+                            window.open(
+                                'https://github.com/edanchenkov/MenuTube/releases',
+                                '_blank'
+                            );
+                        }}
+                    >
+                        DOWNLOAD
+                    </DownloadButton>
                 </Content>
             </Background>
         );

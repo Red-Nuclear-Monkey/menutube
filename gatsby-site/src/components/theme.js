@@ -8,6 +8,7 @@ const theme = {
         red: '#F22323',
         redOrange: '#D35C50',
         blue: '#0975C3',
+        blueOutline: '#88b8ff',
         green: '#00cc66'
     },
     borderRadius: {
@@ -21,6 +22,8 @@ const theme = {
         thirdHeader: [3, 'rem'],
         fourthHeader: [2, 'rem'],
         default: [1.5, 'rem'],
+        defaultMobilePortrait: [2.2, 'rem'],
+        defaultMobileLandscape: [3, 'rem'],
         buttonContent: [1.3, 'rem'],
         navTitles: [1.2, 'rem']
     },
