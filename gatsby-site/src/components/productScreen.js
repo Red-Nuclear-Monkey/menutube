@@ -125,7 +125,7 @@ class Product extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            offset: '200'
+            offset: '0'
         };
     }
 

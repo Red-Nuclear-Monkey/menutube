@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import redNuclearLogo from '../images/rednuclear-monkey.png';
 import githubLogo from '../images/github.png';
 import { FocusStyle, FontStyle } from './cssStyle';
-import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
 
@@ -65,7 +64,7 @@ const Text = styled.div`
     text-align: justify;
 
     span.highlight {
-        background: rgb(211, 92, 80, .1);
+        background: rgba(211, 92, 80, .1);
     }
 
     @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
@@ -165,14 +164,12 @@ class Github extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            offset: '200'
+            offset: '0'
         };
     }
 
     componentDidMount() {
-        this.setState({ offset: window.innerHeight * 0.5 }, () => {
-            Aos.init();
-        });
+        this.setState({ offset: window.innerHeight * 0.5 });
     }
 
     render() {
