@@ -36,8 +36,8 @@ const Title = styled.div`
 
     span.cursor {
         display: inline-block;
-        width: .2rem;
-        margin-right: .5rem;
+        width: 0.2rem;
+        margin-right: 0.5rem;
         animation: blink 1s infinite;
         background-color: ${props => props.theme.colors.black};
     }

@@ -6,7 +6,9 @@ export const sizeMediaQueries = {
     mobileLandscape: '480px',
     tabletPortrait: '768px',
     tabletLandscape: '992px',
-    laptop: '1200px'
+    laptop: '1366px',
+    laptopBigScreen: '1536px',
+    maxLaptopHeight: '767px'
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -15,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .55}rem;
+        font-size: ${defaultSizeFont * 0.55}rem;
     }
 }
 
@@ -24,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .48}rem;
+        font-size: ${defaultSizeFont * 0.48}rem;
     }
 }
 
@@ -33,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .8}rem;
+        font-size: ${defaultSizeFont * 0.8}rem;
     }
 }
 
@@ -42,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .8}rem;
+        font-size: ${defaultSizeFont * 0.8}rem;
     }
 }
 
@@ -55,12 +57,31 @@ const GlobalStyle = createGlobalStyle`
     }
 }
 
+@media only screen and (min-device-width: ${sizeMediaQueries.laptopBigScreen}) {
+    /* Styles */
+    html,
+    body {
+        font-size: ${defaultSizeFont * 1.2}rem;
+    }
+}
+
+@media only screen and (max-device-height: ${
+    sizeMediaQueries.maxLaptopHeight
+}) {
+    /* Styles */
+    html,
+    body {
+        font-size: ${defaultSizeFont * 0.8}rem;
+    }
+}
+
+
 /* iPhone X (Landscape) ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .5}rem;
+        font-size: ${defaultSizeFont * 0.5}rem;
     }
 }
 
@@ -69,7 +90,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .4}rem;
+        font-size: ${defaultSizeFont * 0.4}rem;
     }
 }
 
@@ -78,7 +99,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .45}rem;
+        font-size: ${defaultSizeFont * 0.45}rem;
     }
 }
 
@@ -87,7 +108,7 @@ const GlobalStyle = createGlobalStyle`
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * .45}rem;
+        font-size: ${defaultSizeFont * 0.45}rem;
     }
 }
 `;

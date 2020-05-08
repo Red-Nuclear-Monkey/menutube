@@ -15,7 +15,7 @@ const Background = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
-        background: rgba(211, 92, 80, .85);
+        background: rgba(211, 92, 80, 0.85);
     }
 
     #image-background {

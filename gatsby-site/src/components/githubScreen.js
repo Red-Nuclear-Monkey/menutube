@@ -44,7 +44,7 @@ const ColumnTitleContent = styled.div`
 `;
 
 const Title = styled.div`
-    border-bottom-width: .4rem;
+    border-bottom-width: 0.4rem;
     border-bottom-style: solid;
     border-bottom-color: ${props => props.theme.colors.redOrange};
     ${FontStyle(
@@ -64,7 +64,7 @@ const Text = styled.div`
     text-align: justify;
 
     span.highlight {
-        background: rgba(211, 92, 80, .1);
+        background: rgba(211, 92, 80, 0.1);
     }
 
     span.bold {
@@ -94,7 +94,7 @@ const ColumnImageOneText = styled.a`
     margin-left: 6rem;
     background-color: ${props => props.theme.colors.redOrange};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 
@@ -142,7 +142,7 @@ const ColumnImageTwo = styled.a`
     margin-left: 4rem;
     background-color: ${props => props.theme.colors.black};
     border-radius: ${props => props.theme.borderRadius.cardBorderRadius};
-    box-shadow: 1px 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     text-decoration: none;
 
@@ -158,7 +158,7 @@ const ColumnImageTwo = styled.a`
 const RedNuclearMonkey = styled.div`
     width: 10rem;
     height: 3rem;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
     background-image: url(${redNuclearLogo});
     background-repeat: no-repeat;
     background-size: contain;

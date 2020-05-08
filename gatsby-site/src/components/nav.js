@@ -36,7 +36,7 @@ const BlockContainer = styled.div`
     }
 
     .nav-bar.scrolling {
-        background: rgb(0, 0, 0, .95);
+        background: rgb(0, 0, 0, 0.95);
         color: white;
 
         @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
@@ -145,7 +145,7 @@ const LogoTitle = styled.div`
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         position: relative;
-        top: .125rem;
+        top: 0.125rem;
         display: flex;
     }
 

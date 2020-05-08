@@ -89,7 +89,7 @@ const Carousel = styled.div`
         li button::before {
             color: ${props => props.theme.colors.redOrange};
             font-size: 1rem;
-            opacity: .5;
+            opacity: 0.5;
         }
 
         li.slick-active button::before {
@@ -197,15 +197,15 @@ const Feature = () => (
             <Carousel>
                 <Slider {...settings}>
                     <Item>
-                        <Icon className="icon-1" />
-                        <TextCarousel>
-                            Browse mobile or desktop versions
-                        </TextCarousel>
-                    </Item>
-                    <Item>
                         <Icon className="icon-2" />
                         <TextCarousel>
                             Listen in background or pin on top of all windows
+                        </TextCarousel>
+                    </Item>
+                    <Item>
+                        <Icon className="icon-1" />
+                        <TextCarousel>
+                            Browse mobile or desktop versions
                         </TextCarousel>
                     </Item>
                     <Item>
