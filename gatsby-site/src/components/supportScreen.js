@@ -124,7 +124,14 @@ const Support = () => (
                 <span className="bold-text">feel free</span> to donate.
             </SubTitle>
             <Sentence>Your donations help developers.</Sentence>
-            <Donate>DONATE</Donate>
+            <Donate
+                onClick={e => {
+                    e.preventDefault();
+                    window.open('https://www.paypal.me/EDanchenkov', '_blank');
+                }}
+            >
+                DONATE
+            </Donate>
         </Content>
         <BRBottom />
     </Background>

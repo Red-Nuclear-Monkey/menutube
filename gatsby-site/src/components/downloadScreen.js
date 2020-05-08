@@ -181,7 +181,17 @@ class Download extends React.Component {
                         YouTube website into your macOS’s menu bar?
                     </Sentence>
                     <Release>Get the last release</Release>
-                    <DownloadButton>DOWNLOAD</DownloadButton>
+                    <DownloadButton
+                        onClick={e => {
+                            e.preventDefault();
+                            window.open(
+                                'https://github.com/edanchenkov/MenuTube/releases',
+                                '_blank'
+                            );
+                        }}
+                    >
+                        DOWNLOAD
+                    </DownloadButton>
                 </Content>
             </Background>
         );

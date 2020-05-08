@@ -147,7 +147,17 @@ class Product extends React.Component {
                         <SubTitle>Use</SubTitle>
                         <Title>MenuTube</Title>
                         <Sentence>YouTube into your macOS menu bar</Sentence>
-                        <DownloadButton>GET THE LAST RELEASE</DownloadButton>
+                        <DownloadButton
+                            onClick={e => {
+                                e.preventDefault();
+                                window.open(
+                                    'https://github.com/edanchenkov/MenuTube/releases',
+                                    '_blank'
+                                );
+                            }}
+                        >
+                            GET THE LAST RELEASE
+                        </DownloadButton>
                     </Content>
                     <Screenshots />
                 </BlockContainer>
