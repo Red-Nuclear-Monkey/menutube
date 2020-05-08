@@ -4,6 +4,7 @@ import menutube from '../images/menutube-play.png';
 import { Link } from 'react-scroll';
 import { sizeMediaQueries } from '../utils/responsive';
 import { FontStyle } from './cssStyle';
+import firebase from 'gatsby-plugin-firebase';
 
 const BlockContainer = styled.div`
     position: fixed;
@@ -183,6 +184,7 @@ const MenuLogo = styled.div`
 class Nav extends React.Component {
     constructor(props) {
         super(props);
+        this.scrollAnalytics = false;
         this.el = React.createRef();
         this.state = {
             menuButton: 'menu-black.svg'
@@ -216,11 +218,13 @@ class Nav extends React.Component {
     }
 
     listenScrollEvent = () => {
-        const heightPercentage = window.document.body.scrollHeight * 0.02;
+        const heightPercentageNav = window.document.body.scrollHeight * 0.02;
+        const heightPercentageAnalytics =
+            window.document.body.scrollHeight * 0.1;
         const nav = document.querySelector('.nav-bar');
         const el = this.el.current;
         if (
-            window.scrollY > heightPercentage &&
+            window.scrollY > heightPercentageNav &&
             !el.classList.contains('open-menu')
         ) {
             nav.classList.add('scrolling');
@@ -228,13 +232,21 @@ class Nav extends React.Component {
                 menuButton: 'menu-white.svg'
             });
         } else if (
-            window.scrollY <= heightPercentage &&
+            window.scrollY <= heightPercentageNav &&
             nav.classList.contains('scrolling')
         ) {
             nav.classList.remove('scrolling');
             this.setState({
                 menuButton: 'menu-black.svg'
             });
+        }
+
+        if (
+            !this.scrollAnalytics &&
+            window.scrollY > heightPercentageAnalytics
+        ) {
+            firebase.analytics().logEvent('user-scroll-10-percent');
+            this.scrollAnalytics = true;
         }
     };
 
