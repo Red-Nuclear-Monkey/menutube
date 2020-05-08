@@ -3,7 +3,8 @@ module.exports = {
     siteMetadata: {
         title: `MenuTube`,
         description: `Catch YouTube into your macOS menu bar!`,
-        author: `@gatsbyjs`
+        author: `@rednuclearmonkey`,
+        image: `logo-icon.png`
     },
     plugins: [
         {
