@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import play from '../images/playbutton.png';
 import { FontStyle } from './cssStyle';
 import { sizeMediaQueries } from '../utils/responsive';
 
@@ -87,15 +86,6 @@ const SubTitle = styled.div`
     }
 `;
 
-const Play = styled.div`
-    width: 15rem;
-    height: 10rem;
-    margin-top: ${props => props.theme.marginTop.smallSpace};
-    background-image: url(${play});
-    background-repeat: no-repeat;
-    background-size: contain;
-`;
-
 class Home extends React.Component {
     componentDidMount() {
         const typedTextSpan = document.querySelector('.typed-text');
@@ -163,7 +153,6 @@ class Home extends React.Component {
                         * or anything else that doesn’t require to focus on
                         video
                     </SubTitle>
-                    <Play />
                 </Content>
             </Background>
         );
