@@ -7,8 +7,7 @@ export const sizeMediaQueries = {
     tabletPortrait: '768px',
     tabletLandscape: '992px',
     laptop: '1366px',
-    laptopBigScreen: '1536px',
-    maxLaptopHeight: '767px'
+    laptopBigScreen: '1536px'
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -49,14 +48,6 @@ const GlobalStyle = createGlobalStyle`
 }
 
 /* Laptop  ----------- */
-@media only screen and (min-device-width: ${sizeMediaQueries.laptop}) {
-    /* Styles */
-    html,
-    body {
-        font-size: ${defaultSizeFont * 1.1}rem;
-    }
-}
-
 @media only screen and (min-device-width: ${sizeMediaQueries.laptopBigScreen}) {
     /* Styles */
     html,
@@ -65,16 +56,13 @@ const GlobalStyle = createGlobalStyle`
     }
 }
 
-@media only screen and (max-device-height: ${
-    sizeMediaQueries.maxLaptopHeight
-}) {
+@media only screen and (min-device-width: ${sizeMediaQueries.laptop}) {
     /* Styles */
     html,
     body {
-        font-size: ${defaultSizeFont * 0.8}rem;
+        font-size: ${defaultSizeFont * 1.1}rem;
     }
 }
-
 
 /* iPhone X (Landscape) ----------- */
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {

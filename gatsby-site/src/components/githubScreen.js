@@ -7,16 +7,9 @@ import 'aos/dist/aos.css';
 import { sizeMediaQueries } from '../utils/responsive';
 
 const Background = styled.div`
-    height: 60vh;
+    padding: 5rem 0;
     background: ${props => props.theme.colors.white};
-
-    @media (max-width: ${sizeMediaQueries.tabletPortrait}) {
-        height: 100vh;
-    }
-
-    @media only screen and (min-device-width: ${sizeMediaQueries.tabletPortrait}) and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
-        height: 75vh;
-    }
+    height: 100%;
 `;
 
 const BlockContainer = styled.div`

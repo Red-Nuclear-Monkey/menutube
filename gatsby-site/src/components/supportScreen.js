@@ -46,6 +46,7 @@ const SubTitle = styled.div`
 
 const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.smallSpace};
+    text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
         props => props.theme.fontsize.defaultMobilePortrait,

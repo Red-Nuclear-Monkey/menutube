@@ -7,7 +7,11 @@ import { sizeMediaQueries } from '../utils/responsive';
 const Background = styled.div`
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    height: 100%;
+
+    @media (pointer: coarse) {
+        height: 100vh;
+    }
 
     .blur {
         position: absolute;
@@ -57,6 +61,7 @@ const Content = styled.div`
     top: 0;
     display: flex;
     height: 100%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -75,7 +80,7 @@ const SubTitle = styled.div`
     z-index: 2;
     ${FontStyle(
         props => props.theme.colors.white,
-        props => props.theme.fontsize.secondHeader,
+        props => props.theme.fontsize.thirdHeader,
         300
     )};
 
@@ -90,7 +95,7 @@ const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.mediumSpace};
     ${FontStyle(
         props => props.theme.colors.white,
-        props => props.theme.fontsize.thirdHeader,
+        props => props.theme.fontsize.fourthHeader,
         100
     )};
     text-align: center;
@@ -180,7 +185,6 @@ class Download extends React.Component {
                         So what are you waiting to put an entire full functional
                         YouTube website into your macOS’s menu bar?
                     </Sentence>
-                    <Release>Get the last release</Release>
                     <DownloadButton
                         onClick={e => {
                             e.preventDefault();
