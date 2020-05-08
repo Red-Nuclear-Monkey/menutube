@@ -67,6 +67,10 @@ const Text = styled.div`
         background: rgba(211, 92, 80, .1);
     }
 
+    span.bold {
+        font-weight: 700;
+    }
+
     @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.defaultMobilePortrait};
     }
@@ -183,10 +187,11 @@ class Github extends React.Component {
                     <ColumnTitleContent>
                         <Title>GitHub</Title>
                         <Text>
-                            <b>MenuTube</b> has already existed for more than 3
-                            years! You can find the old GitHub repository. This
-                            tool is now developed by the company{' '}
-                            <b>Red Nuclear Monkey</b>.
+                            <span className="bold">MenuTube</span> has already
+                            existed for more than 3 years! You can find the old
+                            GitHub repository. This tool is now developed by the
+                            company{' '}
+                            <span className="bold">Red Nuclear Monkey</span>.
                             <br /> <br />
                             Don't hesitate to take a look at our company by
                             visiting our website and leave a message or even
