@@ -18,6 +18,7 @@ const theme = {
     },
     fontsize: {
         mainHeader: [8, 'rem'],
+        titleHeader: [6.5, 'rem'],
         secondHeader: [5, 'rem'],
         thirdHeader: [3, 'rem'],
         fourthHeader: [2, 'rem'],

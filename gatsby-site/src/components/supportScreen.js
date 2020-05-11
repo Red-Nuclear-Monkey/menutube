@@ -22,15 +22,16 @@ const Title = styled.div`
         props => props.theme.fontsize.thirdHeader,
         400
     )};
+    text-align: center;
 `;
 
 const SubTitle = styled.div`
     width: 80%;
-    margin-top: ${props => props.theme.marginTop.smallSpace};
+    margin-top: ${props => props.theme.marginTop.mediumSpace};
     text-align: center;
     ${FontStyle(
         props => props.theme.colors.black,
-        props => props.theme.fontsize.fourthHeader,
+        props => props.theme.fontsize.default,
         300
     )};
 
@@ -40,22 +41,6 @@ const SubTitle = styled.div`
 
     @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 90%;
-        font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
-    }
-`;
-
-const Sentence = styled.div`
-    margin-top: ${props => props.theme.marginTop.smallSpace};
-    text-align: center;
-    ${FontStyle(
-        props => props.theme.colors.black,
-        props => props.theme.fontsize.defaultMobilePortrait,
-        100,
-        'normal',
-        'all-small-caps'
-    )};
-
-    @media only screen and (max-device-width: ${sizeMediaQueries.tabletLandscape}) {
         font-size: ${props => props.theme.fontsize.defaultMobileLandscape};
     }
 `;
@@ -119,12 +104,7 @@ const Support = () => (
     <Background id="support">
         <BRTop />
         <Content>
-            <Title>Thanks for your support!</Title>
-            <SubTitle>
-                If you would like to be thankful for this tool, please{' '}
-                <span className="bold-text">feel free</span> to donate.
-            </SubTitle>
-            <Sentence>Your donations help developers.</Sentence>
+            <Title>You can help us to improve MenuTube!</Title>
             <Donate
                 onClick={e => {
                     e.preventDefault();
@@ -133,6 +113,7 @@ const Support = () => (
             >
                 DONATE
             </Donate>
+            <SubTitle>WE APPRECIATE YOUR SUPPORT ❤️</SubTitle>
         </Content>
         <BRBottom />
     </Background>

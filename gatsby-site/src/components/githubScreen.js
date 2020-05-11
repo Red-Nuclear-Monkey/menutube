@@ -180,17 +180,18 @@ class Github extends React.Component {
                     <ColumnTitleContent>
                         <Title>GitHub</Title>
                         <Text>
-                            <span className="bold">MenuTube</span> has already
-                            existed for more than 3 years! You can find the old
-                            GitHub repository. This tool is now developed by the
-                            company{' '}
+                            <span className="bold">MenuTube</span> has been
+                            created more than 3 years ago! You can find the old
+                            GitHub repository. <br />
+                            <br />
+                            This tool is now developed by the company{' '}
                             <span className="bold">Red Nuclear Monkey</span>.
-                            <br /> <br />
+                            <br />
+                            <br />
                             Don't hesitate to take a look at our company by
-                            visiting our website and leave a message or even
-                            issues regarding MenuTube.{' '}
+                            visiting a website.{' '}
                             <span className="highlight">
-                                We would love to hear them!
+                                You're are welcome!
                             </span>
                         </Text>
                     </ColumnTitleContent>

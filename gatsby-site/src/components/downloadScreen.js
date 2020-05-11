@@ -95,20 +95,10 @@ const Sentence = styled.div`
     margin-top: ${props => props.theme.marginTop.mediumSpace};
     ${FontStyle(
         props => props.theme.colors.white,
-        props => props.theme.fontsize.fourthHeader,
+        props => props.theme.fontsize.thirdHeader,
         100
     )};
     text-align: center;
-`;
-
-const Release = styled.div`
-    z-index: 2;
-    margin-top: ${props => props.theme.marginTop.mediumSpace};
-    ${FontStyle(
-        props => props.theme.colors.white,
-        props => props.theme.fontsize.fourthHeader,
-        700
-    )};
 `;
 
 const DownloadButton = styled.button`
@@ -179,11 +169,11 @@ class Download extends React.Component {
                 <Content>
                     <Title>MenuTube</Title>
                     <SubTitle>
-                        is totally <span className="bold-text">free</span>!
+                        is absolutely <span className="bold-text">free</span>!
                     </SubTitle>
                     <Sentence>
-                        So what are you waiting to put an entire full functional
-                        YouTube website into your macOS’s menu bar?
+                        Are you ready to put an entire full functional YouTube
+                        website into your macOS’s menu bar?
                     </Sentence>
                     <DownloadButton
                         onClick={e => {

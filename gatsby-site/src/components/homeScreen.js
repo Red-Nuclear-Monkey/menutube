@@ -20,7 +20,7 @@ const Content = styled.div`
 const Title = styled.div`
     ${FontStyle(
         props => props.theme.colors.black,
-        props => props.theme.fontsize.secondHeader,
+        props => props.theme.fontsize.titleHeader,
         300
     )};
     text-align: center;
