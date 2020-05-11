@@ -26,10 +26,6 @@ const BlockContainer = styled.div`
             transition: none;
         }
 
-        a {
-            margin: 0 3rem;
-        }
-
         a:hover {
             color: ${props => props.theme.colors.red};
         }
@@ -53,6 +49,11 @@ const BlockContainer = styled.div`
     }
 
     .nav-titles {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
         font-size: ${props => props.theme.fontsize.navTitles};
 
         @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
@@ -99,9 +100,10 @@ const BlockContainer = styled.div`
 const NavContainer = styled.div`
     display: flex;
     max-height: 100vh;
+    width: 100%;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
         width: 100%;
@@ -115,12 +117,8 @@ const MenuLogoContainer = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    &.position {
-        position: relative;
-    }
-
     &.position.fixed {
-        position: fixed;
+        display: none;
     }
 
     @media (max-width: ${sizeMediaQueries.tabletLandscape}) {
@@ -207,11 +205,6 @@ class Nav extends React.Component {
                 },
                 () => {
                     this.el.current.classList.toggle('open-menu');
-                    if (!position.classList.contains('fixed')) {
-                        position.classList.add('fixed');
-                    } else {
-                        position.classList.remove('fixed');
-                    }
                 }
             );
         }
