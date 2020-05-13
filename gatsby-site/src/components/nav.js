@@ -193,7 +193,6 @@ class Nav extends React.Component {
         if (window.innerWidth <= parseInt(sizeMediaQueries.tabletLandscape)) {
             const el = this.el.current;
             const nav = document.querySelector('.nav-bar');
-            const position = document.querySelector('.position');
 
             this.setState(
                 {
